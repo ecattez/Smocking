@@ -1,3 +1,11 @@
+// Source Font Path
+@font-face {
+  font-family: $source-font-family;
+  src: url("#{$source-font-path}/SourceSansPro-Regular.ttf?v=#{$source-version}") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 // Ionicons Font Path
 // --------------------------
 

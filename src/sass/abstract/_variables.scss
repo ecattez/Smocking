@@ -1,9 +1,41 @@
+// Default variable
+
+$skg-prefix: skg- !default;
+
+// Standard web colors
+
+$colorWhite: #fff;
+$colorGrey: #cecece;
+$colorGray: #808080;
+$colorBlack: #333;
+$colorPurple: #333366;
+$colorViolet: #663399;
+$colorBlue: #003399;
+$colorLightBlue: #0099ff;
+$colorGreen: #009966;
+$colorLightGreen: #00ff99;
+$colorRed: #990000;
+$colorLightRed: #cc0000;
+$colorOrange: #cc6600;
+$colorOrangeLight: #ff9933;
+
+$border-color: #cecece;
+
+// Fonts
+
 $base-font-size: 1.4rem;
+
+// Source Font Variables
+// --------------------------
+$source-font-path: "../fonts/source" !default;
+$source-font-family: "Source Sans Pro" !default;
+$source-version: "1.0.0" !default;
+
 
 // Ionicons Variables
 // --------------------------
 
-$ionicons-font-path: "../fonts" !default;
+$ionicons-font-path: "../fonts/ionicons" !default;
 $ionicons-font-family: "Ionicons" !default;
 $ionicons-version: "2.0.1" !default;
 $ionicons-prefix: ion- !default;
