@@ -33,3 +33,70 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// Typography
+
+
+// Headings
+h1 {
+  font-size: $h1-size;
+}
+h2 {
+  font-size: $h2-size;
+}
+h3 {
+  font-size: $h3-size;
+}
+h4 {
+  font-size: $h4-size;
+}
+h5 {
+  font-size: $h5-size;
+}
+h6 {
+  font-size: $h6-size;
+}
+
+// Paragraphs
+p {
+  padding: 0 0 0 $small-value;
+}
+
+// Others
+code {
+  background: $colorLightGrey;
+  color: $colorLightRed;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+}
+mark {
+  background: $colorYellow;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+}
+abbr {
+  cursor: help;
+  border-bottom: 0.1rem dotted $border-color;
+}
+address {
+  margin-bottom: $large-value;
+  font-style: initial;
+  
+  strong {
+    display: block;
+  }
+}
+blockquote {
+  @extend %#{$skg-prefix}bordered;
+  border-left-width: $tiny-value;
+  padding: $small-plus-value $small-value;
+  margin: $tiny-value 0;
+
+  footer {
+    &::before {
+      content: '-';
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+  }
+}

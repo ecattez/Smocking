@@ -1,0 +1,25 @@
+%#{$skg-prefix}button {
+  @extend %#{$skg-prefix}bordered;
+  padding: $tiny-value;
+  cursor: pointer;
+}
+
+.#{$skg-prefix}button {
+  @extend %#{$skg-prefix}button;
+  background: $colorWhite;
+}
+.#{$skg-prefix}button-red {
+  @extend %#{$skg-prefix}button;
+  background: $colorLightRed;
+  color: $colorWhite;
+}
+.#{$skg-prefix}button-green {
+  @extend %#{$skg-prefix}button;
+  background: $colorLightGreen;
+  color: $colorWhite;
+}
+.#{$skg-prefix}button-blue {
+  @extend %#{$skg-prefix}button;
+  background: $colorLightBlue;
+  color: $colorWhite;
+}

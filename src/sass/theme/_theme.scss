@@ -1,9 +1,10 @@
 html {
   height: 100%;
+  font-size: 62.5%; /** 10px **/
 }
 
 body {
   min-height: 100%;
   font-family: $source-font-family;
-  font-size: 62.5%; /** 10px **/
+  font-size: $base-font-size;
 }

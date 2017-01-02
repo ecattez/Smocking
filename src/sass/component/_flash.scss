@@ -1,0 +1,24 @@
+%#{$skg-prefix}flash {
+  @extend %#{$skg-prefix}bordered;
+  padding: $small-plus-value $small-value;
+  margin: $tiny-value 0;
+  font-size: $h3-size;
+  color: $colorWhite;
+}
+
+.#{$skg-prefix}flash-info {
+  @extend %#{$skg-prefix}flash;
+  background: $bg-color-info;
+}
+.#{$skg-prefix}flash-warning {
+  @extend %#{$skg-prefix}flash;
+  background: $bg-color-warning;
+}
+.#{$skg-prefix}flash-danger {
+  @extend %#{$skg-prefix}flash;
+  background: $bg-color-danger;
+}
+.#{$skg-prefix}flash-success {
+  @extend %#{$skg-prefix}flash;
+  background: $bg-color-success;
+}

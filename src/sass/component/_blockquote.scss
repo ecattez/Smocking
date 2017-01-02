@@ -1,0 +1,23 @@
+%#{$skg-prefix}blockquote {
+  @extend %#{$skg-prefix}bordered;
+  border-left-width: $tiny-value;
+  padding: $small-plus-value $small-value;
+  margin: $tiny-value 0;
+}
+
+.#{$skg-prefix}blockquote-info {
+  @extend %#{$skg-prefix}blockquote;
+  border-left-color: $bg-color-info;
+}
+.#{$skg-prefix}blockquote-warning {
+  @extend %#{$skg-prefix}blockquote;
+  border-left-color: $bg-color-warning;
+}
+.#{$skg-prefix}blockquote-danger {
+  @extend %#{$skg-prefix}blockquote;
+  border-left-color: $bg-color-danger;
+}
+.#{$skg-prefix}blockquote-success {
+  @extend %#{$skg-prefix}blockquote;
+  border-left-color: $bg-color-success;
+}
