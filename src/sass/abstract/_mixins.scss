@@ -8,7 +8,7 @@
 
 // Tip blocks
 @mixin tip($borderColor, $content) {
-  @extend %#{$skg-prefix}bordered;
+  @extend .#{$skg-prefix}bordered;
   border-left-width: $tiny-value;
   border-left-color: $borderColor;
   padding: $small-plus-value $small-value;

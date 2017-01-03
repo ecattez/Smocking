@@ -1,10 +1,36 @@
 @mixin flash($bgColor) {
-  @extend %#{$skg-prefix}bordered;
-  padding: $small-plus-value $small-value;
-  margin: $tiny-value 0;
+  @include bordered($bgColor);
   font-size: $h3-size;
-  color: $colorWhite;
-  background: $bgColor;
+  color: darken($bgColor, 20%);
+  background: rgba($bgColor, 0.25);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: $medium-value;
+
+  .#{$skg-prefix}flash-header {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: $small-value;
+
+    .#{$skg-prefix}flash-title {
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+
+    .#{$skg-prefix}flash-close {
+      margin-left: auto;
+      margin-right: $small-value;
+      color: $bgColor;
+      opacity: 0.6;
+      align-items: center;
+    }
+  }
+
+  .#{$skg-prefix}flash-message {
+    background-color: $colorWhite;
+    padding: $small-plus-value $tiny-value;
+  }
 }
 
 .#{$skg-prefix}flash-info {

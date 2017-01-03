@@ -1,0 +1,25 @@
+$skg-spinner-size: 10rem;
+$skg-spinner-thin: calc(#{$skg-spinner-size}/6);
+
+.#{$skg-prefix}loader {
+  @include bordered($colorGray);
+  background-color: $colorLightGrey;
+  position: relative;
+  width: 25rem;
+  height: 25rem;
+
+  &:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(50% - #{$skg-spinner-size}/2);
+    left: calc(50% - #{$skg-spinner-size}/2);
+    width: $skg-spinner-size;
+    height: $skg-spinner-size;
+    border-radius: 50%;
+    border: 0.2rem solid transparent;
+    border-top-color: $colorBlack;
+    border-bottom-color: $colorBlack;
+    animation: spin .8s ease infinite;
+  }
+}

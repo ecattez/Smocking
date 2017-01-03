@@ -1,5 +1,6 @@
 @mixin button($bgColor, $fgColor) {
-  @extend %#{$skg-prefix}bordered;
+  border: 0.1rem solid darken($bgColor, 10%);
+  border-radius: $base-border-radius;
   padding: $small-value $small-plus-value;
   margin-top: $tiny-value;
   margin-bottom: $tiny-value;
@@ -28,6 +29,7 @@
     background-color: lighten($bgColor, 10%);
     opacity: 0.8;
     color: $colorBlack;
+    cursor: default;
 
     &:hover,
     &:focus {
@@ -48,6 +50,9 @@
 .#{$skg-prefix}button-blue {
   @include button($colorBlue, $colorWhite);
 }
+.#{$skg-prefix}button-black {
+  @include button($colorBlack, $colorWhite);
+}
 
 .#{$skg-prefix}button-group {
   [class^="#{$skg-prefix}button"],
@@ -57,11 +62,27 @@
     margin-right: -0.2rem;
 
     &:first-of-type {
-      border-radius: 0.3rem 0 0 0.3rem;
+      border-radius: $base-border-radius 0 0 $base-border-radius;
       margin-left: 0;
     }
     &:last-of-type {
-      border-radius: 0 0.3rem 0.3rem 0;
+      border-radius: 0 $base-border-radius $base-border-radius 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.#{$skg-prefix}button-toolbar {
+  display: inline-flex;
+
+  .#{$skg-prefix}button-group {
+    margin-left: $tiny-value;
+    margin-right: $tiny-value;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+    &:last-of-type {
       margin-right: 0;
     }
   }

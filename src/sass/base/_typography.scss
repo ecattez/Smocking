@@ -111,18 +111,18 @@ code {
   background: $colorLightGrey;
   color: $colorLightRed;
   padding: 0.2rem 0.4rem;
-  border-radius: 0.3rem;
+  border-radius: $base-border-radius
 }
 pre {
   background: $colorLightGrey;
   color: $colorBlack;
   padding: 0.2rem 0.4rem;
-  border-radius: 0.3rem;
+  border-radius: $base-border-radius
 }
 mark {
   background: $colorYellow;
   padding: 0.2rem 0.4rem;
-  border-radius: 0.3rem;
+  border-radius: $base-border-radius
 }
 abbr {
   cursor: help;

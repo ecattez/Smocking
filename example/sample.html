@@ -30,15 +30,63 @@
         <footer>From an <cite>unknown man</cite></footer>
     </blockquote>
     <h2>Tip</h2>
-    <aside class="skg-tip-info"><p>Info tip</p></aside>
-    <aside class="skg-tip-warning"><p>Warning tip</p></aside>
-    <aside class="skg-tip-danger"><p>Danger tip</p></aside>
-    <aside class="skg-tip-success"><p>Success tip</p></aside>
+    <aside class="skg-tip-info">
+        <p>Info tip</p>
+    </aside>
+    <aside class="skg-tip-warning">
+        <p>Warning tip</p>
+    </aside>
+    <aside class="skg-tip-danger">
+        <p>Danger tip</p>
+    </aside>
+    <aside class="skg-tip-success">
+        <p>Success tip</p>
+    </aside>
     <h2>Flash information</h2>
-    <aside class="skg-flash-info">Info flash</aside>
-    <aside class="skg-flash-warning">Warning flash</aside>
-    <aside class="skg-flash-danger">Danger flash</aside>
-    <aside class="skg-flash-success">Success flash</aside>
+    <aside class="skg-flash-info">
+        <div class="skg-flash-header">
+            <p class="skg-flash-title">Info flash</p>
+            <a class="skg-flash-close" href="#!" rel="flash:close">
+                <span class="ion-close"></span>
+            </a>
+        </div>
+        <div class="skg-flash-message">
+            <p>Info message.</p>
+        </div>
+    </aside>
+    <aside class="skg-flash-warning">
+        <div class="skg-flash-header">
+            <p class="skg-flash-title">Warning flash</p>
+            <a class="skg-flash-close" href="#!" rel="flash:close">
+                <span class="ion-close"></span>
+            </a>
+        </div>
+        <div class="skg-flash-message">
+            <p>Warning message.</p>
+        </div>
+    </aside>
+    <aside class="skg-flash-danger">
+        <div class="skg-flash-header">
+            <p class="skg-flash-title">Danger flash</p>
+            <a class="skg-flash-close" href="#!" rel="flash:close">
+                <span class="ion-close"></span>
+            </a>
+        </div>
+        <div class="skg-flash-message">
+            <p>Danger message.</p>
+        </div>
+    </aside>
+    <aside class="skg-flash-success">
+        <div class="skg-flash-header">
+            <p class="skg-flash-title">Success flash</p>
+            <a class="skg-flash-close" href="#!" rel="flash:close">
+                <span class="ion-close"></span>
+            </a>
+        </div>
+        <div class="skg-flash-message">
+            <p>Success message.</p>
+        </div>
+    </aside>
     <h1>Lists</h1>
     <h2>No style</h2>
     <ul class="skg-no-list-style">
@@ -114,6 +162,7 @@
     <button class="skg-button-red">Click me</button>
     <button class="skg-button-green">Click me</button>
     <button class="skg-button-blue">Click me</button>
+    <button class="skg-button-black">Click me</button>
     <h2>Disabled button</h2>
     <button class="skg-button" disabled>Click me</button>
     <button class="skg-button-red" disabled>Click me</button>
@@ -129,12 +178,24 @@
         <button class="skg-button">Stop</button>
         <button class="skg-button">Reset</button>
     </div>
+    <h2>Button Group Toolbar</h2>
+    <div class="skg-button-toolbar">
+        <div class="skg-button-group">
+            <button class="skg-button">Play</button>
+            <button class="skg-button">Stop</button>
+        </div>
+        <div class="skg-button-group">
+            <button class="skg-button">Play</button>
+            <button class="skg-button">Stop</button>
+            <button class="skg-button">Reset</button>
+        </div>
+    </div>
     <h2>False button with link</h2>
     <a class="skg-button" href="#!">Click me</a>
     <a class="skg-button-red" href="#!">Click me</a>
     <a class="skg-button-green" href="#!">Click me</a>
     <a class="skg-button-blue" href="#!">Click me</a>
-    <h1>Spinner</h1>
-    <button class="skg-spinner">&nbsp;</button>
+    <h1>Loader</h1>
+    <div class="skg-loader">&nbsp;</div>
 </body>
 </html>

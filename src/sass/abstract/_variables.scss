@@ -16,6 +16,8 @@ $extra-large-plus-value : 12rem !default; // extra large value for margins / pad
 $ultra-large-value      : 16rem !default; // ultra large value for margins / paddings
 $ultra-large-plus-value : 20rem !default; // ultra large value for margins / paddings
 
+$base-border-radius     : 0.2rem !default;
+
 // Standard web colors
 
 $colorWhite: #fff !default;
@@ -25,14 +27,12 @@ $colorGray: #808080 !default;
 $colorBlack: #333 !default;
 $colorPurple: #333366 !default;
 $colorViolet: #663399 !default;
-$colorBlue: #337ab7 !default;
-$colorLightBlue: #0099ff !default;
-$colorGreen: #009966 !default;
-$colorLightGreen: #5cb85c !default;
-$colorRed: #c9302c !default;
-$colorLightRed: #d9534f !default;
-$colorOrange: #cc6600 !default;
-$colorOrangeLight: #ff9933 !default;
+$colorBlue: #0f75da !default;
+$colorGreen: #6dc066 !default;
+$colorRed: #cc0000 !default;
+$colorLightRed: #ff4444 !default;
+$colorOrange: #ff9933 !default;
+$colorOrangeLight: #ff9c00 !default;
 $colorYellow: #ff9 !default;
 
 $border-color: #cecece;
