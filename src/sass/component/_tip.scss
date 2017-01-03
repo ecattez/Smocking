@@ -1,0 +1,12 @@
+.#{$skg-prefix}tip-info {
+  @include tip($bg-color-info, $ionicon-var-information);
+}
+.#{$skg-prefix}tip-warning {
+  @include tip($bg-color-warning, $ionicon-var-nuclear);
+}
+.#{$skg-prefix}tip-danger {
+  @include tip($bg-color-danger, $ionicon-var-alert);
+}
+.#{$skg-prefix}tip-success {
+  @include tip($bg-color-success, $ionicon-var-checkmark);
+}

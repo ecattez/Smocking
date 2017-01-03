@@ -1,0 +1,51 @@
+table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: top;
+  margin-bottom: $medium-value;
+  border: 0.1rem solid $colorGray;
+
+  thead {
+    th {
+      border: 0.1rem solid $colorGray;
+    }
+  }
+
+  td,
+  th {
+    border: 0.1rem dotted $colorGray;
+    vertical-align: top;
+    min-width: $medium-value;
+    cursor: default;
+    padding: $tiny-value $tiny-plus-value;
+    text-align: left;
+
+    &[title] {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  tbody {
+    tr {
+      &.#{$skg-prefix}table-separator {
+        background: none;
+      }
+    }
+  }
+
+  &.#{$skg-prefix}stripped-table {
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: $colorWhite;
+        }
+        &:nth-child(even) {
+          background-color: $colorLightGrey;
+        }
+      }
+    }
+  }
+}

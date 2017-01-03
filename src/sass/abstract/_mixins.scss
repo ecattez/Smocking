@@ -1,0 +1,32 @@
+// Responsive mixin
+@mixin respond-to($value) {
+  $string: breakpoint($value);
+  @media screen and #{$string} {
+    @content;
+  }
+}
+
+// Tip blocks
+@mixin tip($borderColor, $content) {
+  @extend %#{$skg-prefix}bordered;
+  border-left-width: $tiny-value;
+  border-left-color: $borderColor;
+  padding: $small-plus-value $small-value;
+  margin: $tiny-value 0;
+  position: relative;
+
+  &:before {
+    @extend .ion;
+    content: $content;
+    position: absolute;
+    top: 1.4rem;
+    left: -1.2rem;
+    background-color: $borderColor;
+    color: $colorWhite;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 100%;
+    text-align: center;
+  }
+}

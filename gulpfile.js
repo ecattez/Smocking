@@ -15,7 +15,7 @@ const CONFIG = {};
 // Final files
 CONFIG.DIST = {};
 CONFIG.DIST.ROOT = './dist';
-CONFIG.DIST.CSS = CONFIG.DIST.ROOT + '/css';
+CONFIG.DIST.SASS = CONFIG.DIST.ROOT + '/css';
 
 // Source files
 CONFIG.SRC = {};
@@ -27,7 +27,7 @@ gulp.task('sass', function() {
         .pipe(sass({outputStyle: 'compressed'}).on('error',sass.logError))
         .pipe(autoprefixer())
         .pipe(concat('smocking.min.css'))
-        .pipe(gulp.dest(CONFIG.DIST.CSS));
+        .pipe(gulp.dest(CONFIG.DIST.SASS));
 });
 
 gulp.task('default', ['sass'], function() {

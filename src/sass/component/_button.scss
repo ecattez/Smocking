@@ -1,25 +1,21 @@
-%#{$skg-prefix}button {
+@mixin button($bgColor, $fgColor) {
   @extend %#{$skg-prefix}bordered;
-  padding: $tiny-value;
+  border-bottom: 0.2rem solid $colorOrange;
+  padding: $small-value;
   cursor: pointer;
+  background-color: $bgColor;
+  color: $fgColor;
 }
 
 .#{$skg-prefix}button {
-  @extend %#{$skg-prefix}button;
-  background: $colorWhite;
+  @include button($colorWhite, $colorBlack);
 }
 .#{$skg-prefix}button-red {
-  @extend %#{$skg-prefix}button;
-  background: $colorLightRed;
-  color: $colorWhite;
+  @include button($colorRed, $colorWhite);
 }
 .#{$skg-prefix}button-green {
-  @extend %#{$skg-prefix}button;
-  background: $colorLightGreen;
-  color: $colorWhite;
+  @include button($colorGreen, $colorWhite);
 }
 .#{$skg-prefix}button-blue {
-  @extend %#{$skg-prefix}button;
-  background: $colorLightBlue;
-  color: $colorWhite;
+  @include button($colorBlue, $colorWhite);
 }

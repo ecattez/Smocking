@@ -60,12 +60,62 @@ h6 {
 // Paragraphs
 p {
   padding: 0 0 0 $small-value;
+  margin: 0;
+}
+
+// Lists
+ul, ol {
+  &.#{$skg-prefix}no-list-style {
+    padding-left: 0;
+    list-style: none;
+  }
+  &.#{$skg-prefix}inline-list {
+    @extend .#{$skg-prefix}no-list-style;
+    display: inline-flex;
+
+    li {
+      padding: 0 $tiny-value;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// Description
+dl {
+  dt {
+    font-weight: bold;
+  }
+  dt, dd {
+    margin: 0;
+    padding: $small-value;
+  }
+  dd {
+    text-align: justify;
+  }
+
+  &.#{$skg-prefix}inline-description {
+    dt {
+      float: left;
+      text-align: right;
+    }
+  }
 }
 
 // Others
 code {
   background: $colorLightGrey;
   color: $colorLightRed;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+}
+pre {
+  background: $colorLightGrey;
+  color: $colorBlack;
   padding: 0.2rem 0.4rem;
   border-radius: 0.3rem;
 }
@@ -87,15 +137,15 @@ address {
   }
 }
 blockquote {
-  @extend %#{$skg-prefix}bordered;
-  border-left-width: $tiny-value;
-  padding: $small-plus-value $small-value;
-  margin: $tiny-value 0;
+  @include tip($colorGray, $ionicon-var-quote);
 
   footer {
     &::before {
-      content: '-';
+      @extend .ion;
+      content: $ionicon-var-minus-round;
+      color: $border-color;
       font-weight: bold;
+      margin-top: 1rem;
       margin-right: 1rem;
     }
   }

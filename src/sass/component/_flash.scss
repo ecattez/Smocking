@@ -1,24 +1,21 @@
-%#{$skg-prefix}flash {
+@mixin flash($bgColor) {
   @extend %#{$skg-prefix}bordered;
   padding: $small-plus-value $small-value;
   margin: $tiny-value 0;
   font-size: $h3-size;
   color: $colorWhite;
+  background: $bgColor;
 }
 
 .#{$skg-prefix}flash-info {
-  @extend %#{$skg-prefix}flash;
-  background: $bg-color-info;
+  @include flash($bg-color-info);
 }
 .#{$skg-prefix}flash-warning {
-  @extend %#{$skg-prefix}flash;
-  background: $bg-color-warning;
+  @include flash($bg-color-warning);
 }
 .#{$skg-prefix}flash-danger {
-  @extend %#{$skg-prefix}flash;
-  background: $bg-color-danger;
+  @include flash($bg-color-danger);
 }
 .#{$skg-prefix}flash-success {
-  @extend %#{$skg-prefix}flash;
-  background: $bg-color-success;
+  @include flash($bg-color-success);
 }
