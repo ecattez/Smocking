@@ -1,10 +1,39 @@
 @mixin button($bgColor, $fgColor) {
   @extend %#{$skg-prefix}bordered;
-  border-bottom: 0.2rem solid $colorOrange;
-  padding: $small-value;
+  padding: $small-value $small-plus-value;
+  margin-top: $tiny-value;
+  margin-bottom: $tiny-value;
   cursor: pointer;
   background-color: $bgColor;
   color: $fgColor;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  line-height: normal;
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    background-color: darken($bgColor, 10%);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: darken($bgColor, 20%) 0 0.1rem 0.1rem inset;
+  }
+
+  &[disabled] {
+    background-color: lighten($bgColor, 10%);
+    opacity: 0.8;
+    color: $colorBlack;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+  }
 }
 
 .#{$skg-prefix}button {
@@ -18,4 +47,22 @@
 }
 .#{$skg-prefix}button-blue {
   @include button($colorBlue, $colorWhite);
+}
+
+.#{$skg-prefix}button-group {
+  [class^="#{$skg-prefix}button"],
+  [class*=" #{$skg-prefix}button"] {
+    border-radius: 0;
+    margin-left: -0.2rem;
+    margin-right: -0.2rem;
+
+    &:first-of-type {
+      border-radius: 0.3rem 0 0 0.3rem;
+      margin-left: 0;
+    }
+    &:last-of-type {
+      border-radius: 0 0.3rem 0.3rem 0;
+      margin-right: 0;
+    }
+  }
 }
