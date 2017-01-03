@@ -1,0 +1,89 @@
+.skg-items {
+    display: flex;
+    box-sizing: border-box;
+    
+    &.is-reversed {
+        flex-direction: row-reverse 
+    }
+    
+    &.is-vertical {
+        flex-direction: column;
+        
+        &.is-reversed {
+            flex-direction: column-reverse;
+        }
+        
+        // Prevent issues with row "all-to-*" alignment //
+        &.all-to-top, &.all-to-bottom, &.all-to-center {
+            align-items: initial;
+        }
+        
+        &.all-to-top {
+            justify-content: flex-start;
+        }
+
+        &.all-to-center {
+            justify-content: center;
+        }
+
+        &.all-to-bottom {
+            justify-content: flex-end;
+        }
+    }
+    
+    &.all-are-gutterless .skg-item {
+        margin-right: 0;
+        margin-left: 0;
+    }
+            
+    &.all-to-top {
+        align-items: flex-start;
+    }
+
+    &.all-to-center {
+        align-items: center;
+    }
+
+    &.all-to-bottom {
+        align-items: flex-end;
+    }
+    
+    &.all-are-static .skg-item {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+    
+    .skg-items {
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    
+    .skg-item {
+        box-sizing: border-box;
+        margin: 1.25rem;
+        flex-grow: 1;
+        flex-shrink: 1;
+        
+        &.is-static {
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        
+        &.is-gutterless {
+            margin-right: 0;
+            margin-left: 0;
+        }
+        
+        &.to-top {
+            align-self: flex-start;
+        }
+        
+        &.to-bottom {
+            align-self: flex-end;
+        }
+        
+        &.to-center {
+            align-self: center;
+        }
+    }
+}
