@@ -33,15 +33,19 @@
   }
 }
 
-.#{$skg-prefix}flash-info {
-  @include flash($bg-color-info);
-}
-.#{$skg-prefix}flash-warning {
-  @include flash($bg-color-warning);
-}
-.#{$skg-prefix}flash-danger {
-  @include flash($bg-color-danger);
-}
-.#{$skg-prefix}flash-success {
-  @include flash($bg-color-success);
+.#{$skg-prefix}flash {
+
+  &.#{$skg-prefix}info {
+    @include flash($bg-color-info);
+  }
+  &.#{$skg-prefix}warning {
+    @include flash($bg-color-warning);
+  }
+  &.#{$skg-prefix}danger {
+    @include flash($bg-color-danger);
+  }
+  &.#{$skg-prefix}success {
+    @include flash($bg-color-success);
+  }
+
 }

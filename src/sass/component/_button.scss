@@ -43,18 +43,23 @@
 
 .#{$skg-prefix}button {
   @include button($colorWhite, $colorBlack);
-}
-.#{$skg-prefix}button-red {
-  @include button($colorRed, $colorWhite);
-}
-.#{$skg-prefix}button-green {
-  @include button($colorGreen, $colorWhite);
-}
-.#{$skg-prefix}button-blue {
-  @include button($colorBlue, $colorWhite);
-}
-.#{$skg-prefix}button-black {
-  @include button($colorBlack, $colorWhite);
+
+  &.#{$skg-prefix}info {
+    @include button($colorBlue, $colorWhite);
+  }
+  &.#{$skg-prefix}warning {
+    @include button($colorOrange, $colorWhite);
+  }
+  &.#{$skg-prefix}danger {
+    @include button($colorRed, $colorWhite);
+  }
+  &.#{$skg-prefix}success {
+    @include button($colorGreen, $colorWhite);
+  }
+  &.#{$skg-prefix}reverse {
+    @include button($colorBlack, $colorWhite);
+  }
+
 }
 
 .#{$skg-prefix}button-group {
