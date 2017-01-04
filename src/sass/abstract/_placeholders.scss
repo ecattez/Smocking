@@ -1,8 +1,0 @@
-@mixin bordered($borderColor) {
-  border: 0.1rem solid darken($borderColor, 10%);
-  border-radius: $base-border-radius;
-}
-
-.#{$skg-prefix}bordered {
-  @include bordered($border-color);
-}

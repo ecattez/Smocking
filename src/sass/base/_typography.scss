@@ -56,6 +56,9 @@ h5 {
 h6 {
   font-size: $h6-size;
 }
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $small-value;
+}
 
 // Paragraphs
 p {
@@ -71,7 +74,8 @@ ul, ol {
   }
   &.#{$skg-prefix}inline-list {
     @extend .#{$skg-prefix}no-list-style;
-    display: inline-flex;
+    display: flex;
+    flex-flow: row nowrap;
 
     li {
       padding: 0 $tiny-value;
@@ -111,22 +115,24 @@ code {
   background: $colorLightGrey;
   color: $colorLightRed;
   padding: 0.2rem 0.4rem;
-  border-radius: $base-border-radius
+  border-radius: $base-border-radius;
+  font-family: monospace;
 }
 pre {
   background: $colorLightGrey;
   color: $colorBlack;
   padding: 0.2rem 0.4rem;
-  border-radius: $base-border-radius
+  border-radius: $base-border-radius;
+  font-family: monospace;
 }
 mark {
   background: $colorYellow;
   padding: 0.2rem 0.4rem;
-  border-radius: $base-border-radius
+  border-radius: $base-border-radius;
 }
 abbr {
   cursor: help;
-  border-bottom: 0.1rem dotted $border-color;
+  border-bottom: 0.1rem dotted $base-border-color;
 }
 address {
   margin-bottom: $large-value;
@@ -143,10 +149,16 @@ blockquote {
     &::before {
       @extend .ion;
       content: $ionicon-var-minus-round;
-      color: $border-color;
+      color: $base-border-color;
       font-weight: bold;
       margin-top: 1rem;
       margin-right: 1rem;
     }
   }
+}
+q {
+  @extend p;
+}
+cite {
+  font-style: italic;
 }

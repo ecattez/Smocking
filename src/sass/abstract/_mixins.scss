@@ -6,11 +6,15 @@
   }
 }
 
+@mixin bordered($borderColor) {
+  border: 0.1rem solid $borderColor;
+  border-radius: $base-border-radius;
+}
+
 // Tip blocks
 @mixin tip($borderColor, $content) {
-  @extend .#{$skg-prefix}bordered;
+  @include bordered(darken($borderColor, 10%));
   border-left-width: $tiny-value;
-  border-left-color: $borderColor;
   padding: $small-plus-value $small-value;
   margin: $tiny-value 0;
   position: relative;
@@ -21,7 +25,7 @@
     position: absolute;
     top: 1.4rem;
     left: -1.2rem;
-    background-color: $borderColor;
+    background-color: darken($borderColor, 10%);
     color: $colorWhite;
     width: 2rem;
     height: 2rem;

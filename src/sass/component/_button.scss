@@ -1,6 +1,5 @@
 @mixin button($bgColor, $fgColor) {
-  border: 0.1rem solid darken($bgColor, 10%);
-  border-radius: $base-border-radius;
+  @include bordered(darken($bgColor, 10%));
   padding: $small-value $small-plus-value;
   margin-top: $tiny-value;
   margin-bottom: $tiny-value;
@@ -8,6 +7,7 @@
   background-color: $bgColor;
   color: $fgColor;
   font-weight: 300;
+  font-size: $base-font-size;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
@@ -17,6 +17,9 @@
 
   &:hover,
   &:focus {
+    &:not([disabled]) {
+      @include bordered(darken($bgColor, 20%));
+    }
     background-color: darken($bgColor, 10%);
   }
 
@@ -73,7 +76,8 @@
 }
 
 .#{$skg-prefix}button-toolbar {
-  display: inline-flex;
+  display: flex;
+  flex-flow: row nowrap;
 
   .#{$skg-prefix}button-group {
     margin-left: $tiny-value;

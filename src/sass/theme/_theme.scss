@@ -5,11 +5,7 @@ html {
 body {
     font-family: $source-font-family;
     font-size: $base-font-size;
-    color: #313131;
-}
-
-h1 {
-    margin-bottom: 1rem;
+    color: $colorBlack;
 }
 
 .container {
@@ -21,24 +17,24 @@ h1 {
     }
 }
 
-.{$skg-prefix}item {
+.skg-item {
     padding: 1.25rem;
-    border: 1px solid #eaeaea;
-    border-radius: 2px;
+    border: 0.1rem solid $base-border-color;
+    border-radius: 0.2rem;
     font-size: 1.2rem;
     text-align: center;
 }
 
 .all-to-bottom {
-    height: 400px;
+    height: 40rem;
     
     .skg-item {
-        height: 61px;
+        height: 6.1rem;
     }
 }
 
 .to-top, 
 .to-bottom, 
 .to-center {
-    height: 61px;
+    height: 6.1rem;
 }

@@ -39,12 +39,26 @@ table {
   &.#{$skg-prefix}stripped-table {
     tbody {
       tr {
-        &:nth-child(odd) {
+        &:nth-child(even) {
           background-color: $colorWhite;
         }
-        &:nth-child(even) {
+        &:nth-child(odd) {
           background-color: $colorLightGrey;
         }
+      }
+    }
+  }
+
+  &.#{$skg-prefix}-responsive-table {
+    thead,
+    th,
+    tr.#{$skg-prefix}table-separator {
+      display: none;
+    }
+
+    tbody {
+      td {
+
       }
     }
   }

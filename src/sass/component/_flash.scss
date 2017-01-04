@@ -1,5 +1,5 @@
 @mixin flash($bgColor) {
-  @include bordered($bgColor);
+  @include bordered(darken($bgColor, 10%));
   font-size: $h3-size;
   color: darken($bgColor, 20%);
   background: rgba($bgColor, 0.25);

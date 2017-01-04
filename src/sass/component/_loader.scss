@@ -20,6 +20,6 @@ $skg-spinner-thin: calc(#{$skg-spinner-size}/6);
     border: 0.2rem solid transparent;
     border-top-color: $colorBlack;
     border-bottom-color: $colorBlack;
-    animation: spin .8s ease infinite;
+    animation: spin 2s linear infinite;
   }
 }
