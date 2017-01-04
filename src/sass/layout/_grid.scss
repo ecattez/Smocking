@@ -1,4 +1,4 @@
-.skg-items {
+.{$skg-prefix}items {
     display: flex;
     box-sizing: border-box;
     
@@ -31,7 +31,7 @@
         }
     }
     
-    &.all-are-gutterless .skg-item {
+    &.all-are-gutterless .{$skg-prefix}item {
         margin-right: 0;
         margin-left: 0;
     }
@@ -48,17 +48,17 @@
         align-items: flex-end;
     }
     
-    &.all-are-static .skg-item {
+    &.all-are-static .{$skg-prefix}item {
         flex-grow: 0;
         flex-shrink: 0;
     }
     
-    .skg-items {
+    .{$skg-prefix}items {
         flex-grow: 1;
         flex-shrink: 1;
     }
     
-    .skg-item {
+    .{$skg-prefix}item {
         box-sizing: border-box;
         margin: 1.25rem;
         flex-grow: 1;
