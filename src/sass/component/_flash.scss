@@ -1,51 +1,66 @@
-@mixin flash($bgColor) {
-  @include bordered(darken($bgColor, 10%));
-  font-size: $h3-size;
-  color: darken($bgColor, 20%);
-  background: rgba($bgColor, 0.25);
-  overflow: hidden;
-  position: relative;
-  margin-bottom: $medium-value;
-
-  .#{$skg-prefix}flash-header {
+@mixin flash($first-color) {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0.1rem 2rem rgba(0,0,0,0.1);
+  
+  .skg-message-content {
     display: flex;
-    flex-flow: row nowrap;
-    padding: $small-value;
-
-    .#{$skg-prefix}flash-title {
-      font-weight: bold;
-      margin: 0;
-      padding: 0;
-    }
-
-    .#{$skg-prefix}flash-close {
-      margin-left: auto;
-      margin-right: $small-value;
-      color: $bgColor;
-      opacity: 0.6;
-      align-items: center;
+    flex-direction: row;
+    line-height: 4rem;
+  }
+  
+  .skg-message-icon, 
+  .skg-message-close {
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+  }
+  
+  .skg-message-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 1.2rem;
+  }
+  
+  .skg-message-close {
+    font-size: 1rem;
+  }
+  
+  .skg-message-close a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      color: $first-color;
     }
   }
-
-  .#{$skg-prefix}flash-message {
-    background-color: $colorWhite;
-    padding: $small-plus-value $tiny-value;
+  
+  .skg-message-icon {
+    background: $first-color;
+    color: white;
+    
+    span {
+      font-size: 2rem;
+      margin: auto;
+      vertical-align: middle;
+    }
   }
+  
 }
 
-.#{$skg-prefix}flash {
-
-  &.#{$skg-prefix}info {
-    @include flash($bg-color-info);
+.#{$skg-prefix}message {
+  @include flash(#9c98f5)
+    
+  &.is-success {
+    @include flash(#90ea89)
   }
-  &.#{$skg-prefix}warning {
-    @include flash($bg-color-warning);
+  
+  &.is-error {
+    @include flash(#ea8989)
   }
-  &.#{$skg-prefix}danger {
-    @include flash($bg-color-danger);
-  }
-  &.#{$skg-prefix}success {
-    @include flash($bg-color-success);
-  }
-
 }

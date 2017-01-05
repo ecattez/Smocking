@@ -1,65 +1,50 @@
-@mixin button($bgColor, $fgColor) {
-  @include bordered(darken($bgColor, 10%));
+@mixin button($first-color, $second-color) {
   padding: $small-value $small-plus-value;
   margin-top: $tiny-value;
   margin-bottom: $tiny-value;
+  background: transparent;
+  border: 0.15rem solid $first-color;
+  border-radius: 15rem;
+  color: $first-color;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  outline: none;
   cursor: pointer;
-  background-color: $bgColor;
-  color: $fgColor;
-  font-weight: 300;
-  font-size: $base-font-size;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
-  line-height: normal;
-  display: inline-block;
-
-  &:hover,
-  &:focus {
-    &:not([disabled]) {
-      @include bordered(darken($bgColor, 20%));
+  transition: all 0.3s ease-in-out;
+  transform-origin: center center;
+  transform: scale3d(1, 1, 1);
+  
+  &:not([disabled]) {
+    
+    &:hover {
+      border-color: $second-color;
+      color: $second-color;
     }
-    background-color: darken($bgColor, 10%);
+    
+    &:active {
+      transform: scale3d(0.95, 0.95, 1);
+    }
   }
-
-  &:focus {
-    outline: 0;
-    box-shadow: darken($bgColor, 20%) 0 0.1rem 0.1rem inset;
-  }
-
+    
   &[disabled] {
-    background-color: lighten($bgColor, 10%);
-    opacity: 0.8;
-    color: $colorBlack;
     cursor: default;
-
-    &:hover,
-    &:focus {
-      box-shadow: none;
-    }
+    opacity: 0.2;
+    transform: scale3d(0.9, 0.9, 1);
   }
 }
 
 .#{$skg-prefix}button {
-  @include button($colorWhite, $colorBlack);
-
-  &.#{$skg-prefix}info {
-    @include button($colorBlue, $colorWhite);
+  @include button(black, #9c98f5);
+  
+  &.is-confirm {
+    @include button(#90ea89, darken(#90ea89, 25%));
   }
-  &.#{$skg-prefix}warning {
-    @include button($colorOrange, $colorWhite);
+  
+  &.is-cancel {
+    @include button(#ea8989, darken(#ea8989, 25%));
   }
-  &.#{$skg-prefix}danger {
-    @include button($colorRed, $colorWhite);
-  }
-  &.#{$skg-prefix}success {
-    @include button($colorGreen, $colorWhite);
-  }
-  &.#{$skg-prefix}reverse {
-    @include button($colorBlack, $colorWhite);
-  }
-
 }
 
 .#{$skg-prefix}button-group {
