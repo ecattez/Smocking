@@ -2,14 +2,14 @@
     display: flex;
     box-sizing: border-box;
     
-    &.is-reversed {
+    &.are-reversed {
         flex-direction: row-reverse;
     }
     
     &.is-vertical {
         flex-direction: column;
         
-        &.is-reversed {
+        &.are-reversed {
             flex-direction: column-reverse;
         }
         
@@ -31,7 +31,7 @@
         }
     }
     
-    &.all-are-gutterless .#{$skg-prefix}item {
+    &.are-gutterless .#{$skg-prefix}item {
         margin-right: 0;
         margin-left: 0;
     }
@@ -48,7 +48,7 @@
         align-items: flex-end;
     }
     
-    &.all-are-static .#{$skg-prefix}item {
+    &.are-static .#{$skg-prefix}item {
         flex-grow: 0;
         flex-shrink: 0;
     }

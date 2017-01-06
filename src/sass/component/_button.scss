@@ -4,7 +4,6 @@
   margin-bottom: $tiny-value;
   background: transparent;
   border: 0.15rem solid $first-color;
-  border-radius: 15rem;
   color: $first-color;
   font-size: 0.8rem;
   font-weight: bold;
@@ -16,6 +15,10 @@
   transform-origin: center center;
   transform: scale3d(1, 1, 1);
   
+  &.is-rounded {
+    border-radius: 15rem;
+  }
+  
   &:not([disabled]) {
     
     &:hover {
@@ -26,12 +29,17 @@
     &:active {
       transform: scale3d(0.95, 0.95, 1);
     }
-  }
     
+  }
+  
   &[disabled] {
     cursor: default;
     opacity: 0.2;
     transform: scale3d(0.9, 0.9, 1);
+  }
+  
+  i {
+    margin-right: 0.5rem;
   }
 }
 
@@ -47,20 +55,37 @@
   }
 }
 
-.#{$skg-prefix}button-group {
-  [class^="#{$skg-prefix}button"],
-  [class*=" #{$skg-prefix}button"] {
-    border-radius: 0;
-    margin-left: -0.2rem;
-    margin-right: -0.2rem;
-
-    &:first-of-type {
-      border-radius: $base-border-radius 0 0 $base-border-radius;
-      margin-left: 0;
+.#{$skg-prefix}buttons {
+  &.are-rounded {
+    .#{$skg-prefix}button {
+      border-radius: 15rem;
     }
-    &:last-of-type {
-      border-radius: 0 $base-border-radius $base-border-radius 0;
-      margin-right: 0;
+  }
+  
+  &.are-grouped {
+    .#{$skg-prefix}button {
+      margin-left: -0.2rem;
+      margin-right: -0.2rem;
+
+      &:first-of-type {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; 
+      }
+      
+      &:last-of-type {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; 
+        margin-right: 0;
+      }
+      
+      &:not(:first-child, :last-child) {
+        border-radius: 0; 
+      }
+      
+      &:hover {
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 }
@@ -76,6 +101,7 @@
     &:first-of-type {
       margin-left: 0;
     }
+    
     &:last-of-type {
       margin-right: 0;
     }
