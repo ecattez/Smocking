@@ -13,7 +13,6 @@
             flex-direction: column-reverse;
         }
         
-        // Prevent issues with row "all-to-*" alignment //
         &.all-to-top, &.all-to-bottom, &.all-to-center {
             align-items: initial;
         }

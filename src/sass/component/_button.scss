@@ -1,10 +1,15 @@
 @mixin button($first-color, $second-color) {
-  padding: $small-value $small-plus-value;
+	display: inline-flex;
+	align-items: center;
+	height: 3rem;
+  padding: 0 1.5rem;
   margin-top: $tiny-value;
   margin-bottom: $tiny-value;
   background: transparent;
-  border: 0.15rem solid $first-color;
+  border: 1px solid $first-color;
+	border-radius: $base-border-radius;
   color: $first-color;
+	font-family: $source-font-family;
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
@@ -29,7 +34,6 @@
     &:active {
       transform: scale3d(0.95, 0.95, 1);
     }
-    
   }
   
   &[disabled] {
@@ -39,19 +43,23 @@
   }
   
   i {
-    margin-right: 0.5rem;
+		font-size: 1.2rem;
+			
+		+ span {
+			margin-left: 0.5rem;
+		}
   }
 }
 
 .#{$skg-prefix}button {
-  @include button(black, #9c98f5);
+  @include button(#313131, #9c98f5);
   
   &.is-confirm {
-    @include button(#90ea89, darken(#90ea89, 25%));
+    @include button(lighten(#31cf25, 15%), #31cf25);
   }
   
   &.is-cancel {
-    @include button(#ea8989, darken(#ea8989, 25%));
+    @include button(lighten(#cf2525, 15%), #cf2525);
   }
 }
 
@@ -63,10 +71,12 @@
   }
   
   &.are-grouped {
+		display: flex;
+			
     .#{$skg-prefix}button {
-      margin-left: -0.2rem;
-      margin-right: -0.2rem;
-
+			position: relative;
+			margin-right: -1px;
+				
       &:first-of-type {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0; 
@@ -81,29 +91,10 @@
       &:not(:first-child, :last-child) {
         border-radius: 0; 
       }
-      
-      &:hover {
-        position: relative;
-        z-index: 1;
-      }
-    }
-  }
-}
-
-.#{$skg-prefix}button-toolbar {
-  display: flex;
-  flex-flow: row nowrap;
-
-  .#{$skg-prefix}button-group {
-    margin-left: $tiny-value;
-    margin-right: $tiny-value;
-
-    &:first-of-type {
-      margin-left: 0;
-    }
-    
-    &:last-of-type {
-      margin-right: 0;
+			
+			&:hover {
+				z-index: 1;			
+			}
     }
   }
 }

@@ -126,7 +126,8 @@ pre {
   font-family: monospace;
 }
 mark {
-  background: $colorYellow;
+	background: none;
+  border: 1px solid #9c98f5;
   padding: 0.2rem 0.4rem;
   border-radius: $base-border-radius;
 }

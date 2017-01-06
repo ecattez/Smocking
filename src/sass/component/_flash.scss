@@ -1,29 +1,36 @@
 @mixin flash($first-color) {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
   background: white;
   box-shadow: 0 0.1rem 2rem rgba(0,0,0,0.1);
+	margin-bottom: $tiny-value;
+	border-radius: $base-border-radius;
+	overflow: hidden;
   
+	&.is-fixed {
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+	
   .skg-message-content {
     display: flex;
     flex-direction: row;
-    line-height: 4rem;
+    line-height: 3.5rem;
   }
   
   .skg-message-icon, 
   .skg-message-close {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     text-align: center;
   }
   
   .skg-message-text {
     flex-grow: 1;
     flex-shrink: 1;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .skg-message-close {
@@ -50,17 +57,16 @@
       vertical-align: middle;
     }
   }
-  
 }
 
 .#{$skg-prefix}message {
   @include flash(#9c98f5)
     
   &.is-success {
-    @include flash(#90ea89)
+    @include flash(lighten(#31cf25, 15%));
   }
   
   &.is-error {
-    @include flash(#ea8989)
+    @include flash(lighten(#cf2525, 15%));
   }
 }
