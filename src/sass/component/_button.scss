@@ -6,17 +6,17 @@
   margin-top: $tiny-value;
   margin-bottom: $tiny-value;
   background: transparent;
-  border: 1px solid $first-color;
+  border: $base-border-width solid $first-color;
 	border-radius: $base-border-radius;
   color: $first-color;
 	font-family: $source-font-family;
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 900;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
   transform-origin: center center;
   transform: scale3d(1, 1, 1);
   
@@ -75,7 +75,7 @@
 			
     .#{$skg-prefix}button {
 			position: relative;
-			margin-right: -1px;
+			margin-right: -$base-border-width;
 				
       &:first-of-type {
         border-top-right-radius: 0;

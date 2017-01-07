@@ -8,22 +8,6 @@ body {
     color: $colorBlack;
 }
 
-.container {
-  max-width: 80rem;
-  margin: auto;
-    
-  + .container {
-      margin-top: 5rem;
-  }
-}
-
-.skg-item {
-    padding: 1.25rem;
-    border: 0.15rem solid black;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
 .all-to-bottom {
     height: 40rem;
     

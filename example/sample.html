@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Sample</title>
-        <link rel="stylesheet" type="text/css" href="../dist/css/smocking.min.css" />
+      <meta charset="UTF-8">
+      <title>Sample</title>
+			<link rel="stylesheet" type="text/css" href="../dist/css/default.css">
+      <link rel="stylesheet" type="text/css" href="../dist/css/smocking.min.css" />
+			
+			<script src="../dist/js/highlight.pack.js"></script>
+			<script>hljs.initHighlightingOnLoad();</script>
     </head>
     
     <body>
@@ -49,82 +53,6 @@
                 <q>This is a blockquote.</q>
                 <footer>From an <cite>unknown man</cite></footer>
             </blockquote>
-        </div>
-
-        <div class="container">
-          <h2>Flash information</h2>
-            
-          <div class="skg-message">
-            <div class="skg-message-content">
-              <div class="skg-message-icon">
-                  <i class="ion-help"></i>
-              </div>
-
-              <div class="skg-message-text">
-                <p>Hey ! how are you ?</p>
-              </div>
-
-              <div class="skg-message-close">
-                <a class="skg-flash-close" href="#!" rel="flash:close">
-                  <i class="ion-close"></i>
-                </a>  
-              </div>
-            </div>
-          </div>
-						
-					<div class="skg-message is-fixed">
-            <div class="skg-message-content">
-              <div class="skg-message-icon">
-                  <i class="ion-help"></i>
-              </div>
-
-              <div class="skg-message-text">
-                <p>Hey ! i'm fixed ?</p>
-              </div>
-
-              <div class="skg-message-close">
-                <a class="skg-flash-close" href="#!" rel="flash:close">
-                  <i class="ion-close"></i>
-                </a>  
-              </div>
-            </div>
-          </div>
-						
-					<div class="skg-message is-error">
-            <div class="skg-message-content">
-              <div class="skg-message-icon">
-                  <i class="ion-flame"></i>
-              </div>
-
-              <div class="skg-message-text">
-                <p>Lorem ipsum</p>
-              </div>
-
-              <div class="skg-message-close">
-                <a class="skg-flash-close" href="#!" rel="flash:close">
-                  <i class="ion-close"></i>
-                </a>  
-              </div>
-            </div>
-          </div>
-						
-					<div class="skg-message is-success">
-            <div class="skg-message-content">
-              <div class="skg-message-icon">
-                  <i class="ion-ios-bolt"></i>
-              </div>
-
-              <div class="skg-message-text">
-                <p>Lorem ipsum</p>
-              </div>
-
-              <div class="skg-message-close">
-                <a class="skg-flash-close" href="#!" rel="flash:close">
-                  <i class="ion-close"></i>
-                </a>  
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="container">
@@ -344,150 +272,118 @@
 
         <div class="container">
             <h1>Loader</h1>
-            <div class="skg-loader">&nbsp;</div>
+						
+            <i class="skg-loader"></i>
+					
+						<button class="skg-button">
+							<i class="skg-loader"></i>
+							<span>Wait a moment please</span>
+						</button>
         </div>
 
-        <div class="container">
-            <div class="skg-heading">
-                <h1>Standard grid system</h1>
-            </div>
+      <section class="skg-section">
+				<div class="skg-wrapper">
+					<div class="skg-items">
+						<div class="skg-item">
+							<i class="ion-social-css3"></i>
+							<h2>Modern</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur risus tellus, pretium eu odio vel, molestie consectetur lectus. Nunc non lectus ante. In interdum efficitur risus, a elementum urna porta eu. Donec sed sapien diam.</p>
+						</div>
 
-            <div class="skg-items">
-                <div class="skg-item">
-                    <p>N°1</p>
-                </div>
+						<div class="skg-item">
+							<i class="ion-social-github"></i>
+							<h2>Open source</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur risus tellus, pretium eu odio vel, molestie consectetur lectus. Nunc non lectus ante. In interdum efficitur risus, a elementum urna porta eu. Donec sed sapien diam.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
 
-                <div class="skg-item">
-                    <p>N°2</p>
-                </div>
+      <section class="skg-section">
+				<div class="skg-wrapper">
+					<div class="skg-items are-columned">
+						<h1>Notifications</h1>
+						
+						<div class="item">
+							<div class="skg-message">
+								<div class="skg-message-content">
+									<div class="skg-message-icon">
+											<i class="ion-help"></i>
+									</div>
 
-                <div class="skg-item">
-                    <p>N°3</p>
-                </div>
+									<div class="skg-message-text">
+										<p>Hey ! how are you ?</p>
+									</div>
 
-                <div class="skg-item">
-                    <p>N°4</p>
-                </div>
-            </div>
-        </div>
+									<div class="skg-message-close">
+										<a class="skg-flash-close" href="#!" rel="flash:close">
+											<i class="ion-close"></i>
+										</a>  
+									</div>
+								</div>
+							</div>
+							
+							<div class="skg-message is-success">
+								<div class="skg-message-content">
+									<div class="skg-message-icon">
+											<i class="ion-help"></i>
+									</div>
 
-        <div class="container">
-            <div class="skg-heading">
-                <h1>Introduction to static item</h1>
-            </div>
+									<div class="skg-message-text">
+										<p>Hey ! how are you ?</p>
+									</div>
 
-            <div class="skg-items">
-                <div class="skg-item is-static">
-                    <p>N°1</p>
-                </div>
+									<div class="skg-message-close">
+										<a class="skg-flash-close" href="#!" rel="flash:close">
+											<i class="ion-close"></i>
+										</a>  
+									</div>
+								</div>
+							</div>
+							
+							<div class="skg-message is-error">
+								<div class="skg-message-content">
+									<div class="skg-message-icon">
+											<i class="ion-help"></i>
+									</div>
 
-                <div class="skg-item">
-                    <p>N°2</p>
-                </div>
+									<div class="skg-message-text">
+										<p>Hey ! how are you ?</p>
+									</div>
 
-                <div class="skg-item">
-                    <p>N°3</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°4</p>
-                </div>
-            </div>
-            
-            <div class="skg-items are-static">
-                <div class="skg-item">
-                    <p>N°1</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°2</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°3</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°4</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="skg-heading">
-                <h1>Introduction to gutterless items</h1>
-            </div>
-            
-            <div class="skg-items">
-                <div class="skg-item is-gutterless">
-                    <p>N°1</p>
-                </div>
-
-                <div class="skg-item is-gutterless">
-                    <p>N°2</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°3</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°4</p>
-                </div>
-            </div>
-
-            <div class="skg-items are-gutterless">
-                <div class="skg-item">
-                    <p>N°1</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°2</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°3</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°4</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="skg-heading">
-                <h1>Introduction to alignment</h1>
-            </div>
-
-            <div class="skg-items">
-
-                <div class="skg-items is-vertical all-to-bottom are-static">
-                    <div class="skg-item">
-                        <p>N°1</p>
-                    </div>
-
-                    <div class="skg-item">
-                        <p>N°2</p>
-                    </div>
-                </div>
-
-                <div class="skg-item to-top">
-                    <p>N°3</p>
-                </div>
-
-                <div class="skg-item to-bottom">
-                    <p>N°4</p>
-                </div>
-
-                <div class="skg-item to-center">
-                    <p>N°5</p>
-                </div>
-
-                <div class="skg-item">
-                    <p>N°4</p>
-                </div>
-            </div>
-        </div>
+									<div class="skg-message-close">
+										<a class="skg-flash-close" href="#!" rel="flash:close">
+											<i class="ion-close"></i>
+										</a>  
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="item">
+							<pre>
+								<code class="html">
+&lt;div class="skg-message"&gt;
+ &lt;div class="skg-message-content"&gt;
+  &lt;div class="skg-message-icon"&gt;
+   &lt;i class="ion-help"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class="skg-message-text"&gt;
+   &lt;p&gt;Hey ! how are you ?&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="skg-message-close"&gt;
+   &lt;a class="skg-flash-close" href="#!" rel="flash:close"&gt;
+    &lt;i class="ion-close"&gt;&lt;/i&gt;
+   &lt;/a&gt;  
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+								</code>
+							</pre>
+						</div>
+					</div>
+				</div>
+			</section>
     </body>
 </html>

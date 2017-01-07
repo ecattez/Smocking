@@ -2,8 +2,22 @@
 @font-face {
   font-family: $source-font-family;
   src: url("#{$source-font-path}/SourceSansPro-Regular.ttf?v=#{$source-version}") format("truetype");
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: $source-font-family;
+  src: url("#{$source-font-path}/SourceSansPro-Bold.ttf?v=#{$source-version}") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: $source-font-family;
+  src: url("#{$source-font-path}/SourceSansPro-Black.ttf?v=#{$source-version}") format("truetype");
+  font-style: normal;
+  font-weight: 900;
 }
 
 // Ionicons Font Path
@@ -127,7 +141,7 @@ pre {
 }
 mark {
 	background: none;
-  border: 1px solid #9c98f5;
+  border: $base-border-width solid #9c98f5;
   padding: 0.2rem 0.4rem;
   border-radius: $base-border-radius;
 }

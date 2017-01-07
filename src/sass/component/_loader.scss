@@ -1,25 +1,48 @@
-$skg-spinner-size: 10rem;
-$skg-spinner-thin: calc(#{$skg-spinner-size}/6);
-
-.#{$skg-prefix}loader {
-  @include bordered($colorGray);
-  background-color: $colorLightGrey;
-  position: relative;
-  width: 25rem;
-  height: 25rem;
-
+@mixin loader() {
+	position: relative;
+	
   &:before {
     content: '';
     box-sizing: border-box;
     position: absolute;
-    top: calc(50% - #{$skg-spinner-size}/2);
-    left: calc(50% - #{$skg-spinner-size}/2);
-    width: $skg-spinner-size;
-    height: $skg-spinner-size;
-    border-radius: 50%;
-    border: 0.2rem solid transparent;
-    border-top-color: $colorBlack;
-    border-bottom-color: $colorBlack;
-    animation: spin 2s linear infinite;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+    border-top: $base-border-width solid #9c98f5;
+    border-right: $base-border-width solid transparent;
+		border-radius: 50%;
+    animation: spin 1s linear infinite;
   }
+}
+
+.#{$skg-prefix}loader {
+	@include loader();
+	
+	display: block;
+	height: 3rem;
+	width: 3rem;
+}
+
+.#{$skg-prefix}button .#{$skg-prefix}loader {
+	width : 1.2rem;
+	height: 1.2rem;
+
+	@include loader();
+}
+
+@keyframes spin {
+  0% {
+		transform: rotate(0deg);
+		border-top: $base-border-width solid #9c98f5;
+	}
+  50% {
+		transform: rotate(180deg);
+		border-top: $base-border-width solid darken(#9c98f5, 15%);
+	}
+	
+	100% {
+		transform: rotate(360deg);
+		border-top: $base-border-width solid #9c98f5;
+	}
 }

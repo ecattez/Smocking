@@ -1,3 +1,12 @@
+.#{$skg-prefix}wrapper {
+  max-width: 70rem;
+  margin: auto;
+    
+  + .container {
+      margin-top: 5rem;
+  }
+}
+
 .#{$skg-prefix}items {
     display: flex;
     box-sizing: border-box;
@@ -6,7 +15,7 @@
         flex-direction: row-reverse;
     }
     
-    &.is-vertical {
+    &.are-columned {
         flex-direction: column;
         
         &.are-reversed {

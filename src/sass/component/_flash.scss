@@ -60,7 +60,7 @@
 }
 
 .#{$skg-prefix}message {
-  @include flash(#9c98f5)
+  @include flash(#9c98f5);
     
   &.is-success {
     @include flash(lighten(#31cf25, 15%));
