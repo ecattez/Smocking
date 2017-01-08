@@ -17,30 +17,14 @@ $ultra-large-value      : 16rem !default; // ultra large value for margins / pad
 $ultra-large-plus-value : 20rem !default; // ultra large value for margins / paddings
 
 // Standard web colors
+$primary-color: #313131;
+$secondary-color: #7a74f1;
+$success-color: #1897e7;
+$error-color: #ec4646;
 
-$colorWhite: #fff !default;
-$colorGrey: #cecece !default;
-$colorLightGrey: #f3f3f3 !default;
-$colorGray: #808080 !default;
-$colorBlack: #333 !default;
-$colorPurple: #333366 !default;
-$colorViolet: #663399 !default;
-$colorBlue: #0f75da !default;
-$colorGreen: #6dc066 !default;
-$colorRed: #cc0000 !default;
-$colorLightRed: #ff4444 !default;
-$colorOrange: #ff9933 !default;
-$colorOrangeLight: #ff9c00 !default;
-$colorYellow: #ff9 !default;
-
-$base-border-width: 1px; 
+$base-border-width: 0px; 
 $base-border-color: #cecece;
-$base-border-radius     : 0.2rem !default;
-
-$bg-color-info: $colorBlue;
-$bg-color-warning: $colorOrange;
-$bg-color-danger: $colorRed;
-$bg-color-success: $colorGreen;
+$base-border-radius: 0rem !default;
 
 // Fonts
 

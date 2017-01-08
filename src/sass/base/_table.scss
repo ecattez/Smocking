@@ -5,17 +5,17 @@ table {
   border-collapse: collapse;
   vertical-align: top;
   margin-bottom: $medium-value;
-  border: 0.1rem solid $colorGray;
+  border: 0.1rem solid black;
 
   thead {
     th {
-      border: 0.1rem solid $colorGray;
+      border: 0.1rem solid black;
     }
   }
 
   td,
   th {
-    border: 0.1rem dotted $colorGray;
+    border: 0.1rem dotted black;
     vertical-align: top;
     min-width: $medium-value;
     cursor: default;
@@ -40,10 +40,10 @@ table {
     tbody {
       tr {
         &:nth-child(even) {
-          background-color: $colorWhite;
+          background-color: transparent;
         }
         &:nth-child(odd) {
-          background-color: $colorLightGrey;
+          background-color: #eee;
         }
       }
     }

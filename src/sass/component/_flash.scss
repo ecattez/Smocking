@@ -31,6 +31,10 @@
     flex-grow: 1;
     flex-shrink: 1;
     font-size: 1rem;
+		
+		p {
+			line-height: inherit;
+		}
   }
   
   .skg-message-close {
@@ -60,13 +64,17 @@
 }
 
 .#{$skg-prefix}message {
-  @include flash(#9c98f5);
+  @include flash($primary-color);
     
+	&.is-secondary {
+    @include flash($secondary-color);
+  }
+	
   &.is-success {
-    @include flash(lighten(#31cf25, 15%));
+    @include flash($success-color);
   }
   
   &.is-error {
-    @include flash(lighten(#cf2525, 15%));
+    @include flash($error-color);
   }
 }

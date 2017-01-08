@@ -78,6 +78,8 @@ h1, h2, h3, h4, h5, h6 {
 p {
   padding: 0 $small-value;
   margin: 0;
+	font-size: 1rem;
+	line-height: 1.2rem;
 }
 
 // Lists
@@ -126,23 +128,19 @@ dl {
 
 // Others
 code {
-  background: $colorLightGrey;
-  color: $colorLightRed;
   padding: 0.2rem 0.4rem;
   border-radius: $base-border-radius;
   font-family: monospace;
 }
 pre {
-  background: $colorLightGrey;
-  color: $colorBlack;
   padding: 0.2rem 0.4rem;
   border-radius: $base-border-radius;
   font-family: monospace;
 }
 mark {
+	color: $secondary-color;
+	font-weight: 700;
 	background: none;
-  border: $base-border-width solid #9c98f5;
-  padding: 0.2rem 0.4rem;
   border-radius: $base-border-radius;
 }
 abbr {
@@ -158,8 +156,6 @@ address {
   }
 }
 blockquote {
-  @include tip($colorGray, $ionicon-var-quote);
-
   footer {
     &::before {
       @extend .ion;
