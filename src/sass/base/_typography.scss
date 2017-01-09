@@ -76,8 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 
 // Paragraphs
 p {
-	font-size: 1rem;
-	line-height: 1.3rem;
+  font-size: 1rem;
+  line-height: 1.3rem;
   
   + p {
     margin-top: $tiny-value;
@@ -140,9 +140,9 @@ pre {
   font-family: monospace;
 }
 mark {
-	color: $secondary-color;
-	font-weight: 700;
-	background: none;
+  color: $secondary-color;
+  font-weight: 700;
+  background: none;
   border-radius: $base-border-radius;
 }
 abbr {

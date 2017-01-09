@@ -1,0 +1,110 @@
+.#{$skg-prefix}table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: top;
+  margin-bottom: $medium-value;
+  border: 0.1rem solid $base-border-color;
+
+  thead {
+    th {
+      border: 0.1rem solid $base-border-color;
+      text-transform: uppercase;
+    }
+  }
+
+  td,
+  th {
+    border: 0.1rem dotted $base-border-color;
+    vertical-align: top;
+    min-width: $medium-value;
+    cursor: default;
+    padding: $tiny-value $tiny-plus-value;
+    text-align: left;
+
+    &[title] {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  tbody {
+    tr {
+      &.#{$skg-prefix}table-separator {
+        background: none;
+      }
+    }
+  }
+
+  &.is-stripped {
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: $color-white;
+        }
+        &:nth-child(odd) {
+          background-color: $color-light-grey;
+        }
+      }
+    }
+  }
+
+  &.is-responsive {
+    @include respond-to("portrait-down") {
+      border: none;
+
+      thead,
+      th {
+        display: none;
+      }
+
+      tr {
+        border: 1px solid $base-border-color;
+        display: flex;
+        flex-flow: column wrap;
+        margin-bottom: $small-value;
+
+        td:first-of-type {
+          border: none;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      td {
+        border: none;
+        border-top: 1px solid $base-border-color;
+        display: block;
+
+        &:before {
+          content: attr(data-title-cell);
+          display: block;
+          font-weight: bold;
+          margin-bottom: $tiny-value;
+        }
+      }
+
+      .h-table-separator {
+        th,
+        td {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.is-scrollable-horizontally {
+  overflow-x: auto;
+
+  .#{$skg-prefix}table {
+    table-layout: fixed;
+    min-width: $small;
+  }
+}

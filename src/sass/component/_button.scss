@@ -1,35 +1,35 @@
 @mixin button-states($background-color, $text-color) {
-	color: $text-color;
-	background: $background-color;
-	
-	&:not([disabled]) {
-		&:hover, &:focus {
-			color: $text-color;
-			background: darken($background-color, 10%);
-		}
-		
-		&:active {
-			transform: scale3d(0.95, 0.95, 1);
-		}
-	}
+  color: $text-color;
+  background: $background-color;
+  
+  &:not([disabled]) {
+    &:hover, &:focus {
+      color: $text-color;
+      background: darken($background-color, 10%);
+    }
+    
+    &:active {
+      transform: scale3d(0.95, 0.95, 1);
+    }
+  }
 }
 
 .#{$skg-prefix}button {
   @include button-states($primary-color, white);
   
-	margin-top: $tiny-value;
+  margin-top: $tiny-value;
   margin-bottom: $tiny-value;
-	font-family: $source-font-family;
-	border-radius: $base-border-radius;
-	
-	display: inline-flex;
-	align-items: center;
-	height: 3rem;
+  font-family: $source-font-family;
+  border-radius: $base-border-radius;
+  
+  display: inline-flex;
+  align-items: center;
+  height: 3rem;
   padding: 0 2rem;
-	border: none;
+  border: none;
   font-size: 0.8rem;
-	letter-spacing: 0.1rem;
-	text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
   outline: none;
   cursor: pointer;
   transform-origin: center center;
@@ -39,15 +39,15 @@
   &.is-rounded {
     border-radius: 15rem;
   }
-	
-	&.is-primary {
-		@include button-states($primary-color, white);
-	}
   
-	&.is-secondary {
-		@include button-states($secondary-color, white);
-	}
-	
+  &.is-primary {
+    @include button-states($primary-color, white);
+  }
+  
+  &.is-secondary {
+    @include button-states($secondary-color, white);
+  }
+  
   &.is-confirm {
     @include button-states($success-color, white);
   }
@@ -56,78 +56,78 @@
     @include button-states($error-color, white);
   }
   
-	i {
-		font-size: 1.2rem;
-			
-		+ span {
-			margin-left: 0.5rem;
-		}
+  i {
+    font-size: 1.2rem;
+      
+    + span {
+      margin-left: 0.5rem;
+    }
   }
-		
-	&[disabled] {
+    
+  &[disabled] {
     cursor: default;
     opacity: 0.2;
     transform: scale3d(0.9, 0.9, 1);
   }
-	
+  
 }
 
 .#{$skg-prefix}buttons {
-  &.are-grouped {
-		display: flex;
-		
-		&.are-rounded {
-			.#{$skg-prefix}button {
-				border-radius: 15rem;
-			}
-		}
-
-		&.are-secondary {
-			.#{$skg-prefix}button {
-				@include button-states($secondary-color, white);
-			}
-		}
-
-		&.are-confirm {
-			.#{$skg-prefix}button {
-				@include button-states($success-color, white);
-			}
-		}
-
-		&.are-cancel {
-			.#{$skg-prefix}button {
-					@include button-states($error-color, white);
-			}
-		}
-		
+  &.are-rounded {
     .#{$skg-prefix}button {
-			position: relative;
-			margin-right: -$base-border-width;
-			
-			&.is-rounded {
-				border-radius: 15rem;
-			}
+      border-radius: 15rem;
+    }
+  }
 
-			&.is-primary {
-				@include button-states($primary-color, white);
-			}
+  &.are-grouped {
+    display: flex;
 
-			&.is-secondary {
-				@include button-states($secondary-color, white);
-			}
+    &.are-secondary {
+      .#{$skg-prefix}button {
+        @include button-states($secondary-color, white);
+      }
+    }
 
-			&.is-confirm {
-				@include button-states($success-color, white);
-			}
+    &.are-confirm {
+      .#{$skg-prefix}button {
+        @include button-states($success-color, white);
+      }
+    }
 
-			&.is-cancel {
-				@include button-states($error-color, white);
-			}
-			
-			&[disabled] {
-				transform: scale3d(1, 1, 1);
-			}
-			
+    &.are-cancel {
+      .#{$skg-prefix}button {
+          @include button-states($error-color, white);
+      }
+    }
+    
+    .#{$skg-prefix}button {
+      position: relative;
+      margin-right: -$base-border-width;
+      
+      &.is-rounded {
+        border-radius: 15rem;
+      }
+
+      &.is-primary {
+        @include button-states($primary-color, white);
+      }
+
+      &.is-secondary {
+        @include button-states($secondary-color, white);
+      }
+
+      &.is-confirm {
+        @include button-states($success-color, white);
+      }
+
+      &.is-cancel {
+        @include button-states($error-color, white);
+      }
+      
+      &[disabled] {
+        transform: scale3d(1, 1, 1);
+      }
+      
       &:first-of-type {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0; 
@@ -142,10 +142,10 @@
       &:not(:first-child, :last-child) {
         border-radius: 0; 
       }
-			
-			&:hover {
-				z-index: 1;			
-			}
+      
+      &:hover {
+        z-index: 1;      
+      }
     }
   }
 }

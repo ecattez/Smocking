@@ -1,54 +1,55 @@
 @mixin loader() {
-	position: relative;
-	
+  
+  position: relative;
+  
   &:before {
     content: '';
     box-sizing: border-box;
     position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-top: 1px solid #9c98f5;
     border-right: 1px solid transparent;
-		border-radius: 50%;
+    border-radius: 50%;
     animation: spin 1s linear infinite;
   }
 }
 
 .#{$skg-prefix}loader {
-	@include loader();
-	
-	display: block;
-	height: 3rem;
-	width: 3rem;
-	
-	&.is-large {
-		@include loader();
-		height: 6rem;
-		width: 6rem
-	}
+  @include loader();
+  
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  
+  &.is-large {
+    @include loader();
+    height: 6rem;
+    width: 6rem
+  }
 }
 
 .#{$skg-prefix}button .#{$skg-prefix}loader {
-	width : 1.2rem;
-	height: 1.2rem;
+  width : 1.2rem;
+  height: 1.2rem;
 
-	@include loader();
+  @include loader();
 }
 
 @keyframes spin {
   0% {
-		transform: rotate(0deg);
-		border-top-color: $secondary-color;
-	}
+    transform: rotate(0deg);
+    border-top-color: $secondary-color;
+  }
   50% {
-		transform: rotate(180deg);
-		border-top-color: darken($secondary-color, 10%);
-	}
-	
-	100% {
-		transform: rotate(360deg);
-		border-top-color: $secondary-color;
-	}
+    transform: rotate(180deg);
+    border-top-color: darken($secondary-color, 10%);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    border-top-color: $secondary-color;
+  }
 }

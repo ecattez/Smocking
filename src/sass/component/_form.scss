@@ -1,0 +1,79 @@
+.#{$skg-prefix}form {
+
+  position: relative;
+  display: flex;
+
+  .#{$skg-prefix}fieldset {
+    position: relative;
+    border: 1px solid $base-border-color;
+    padding: $tiny-plus-value;
+
+    @include respond-to("portrait-down") {
+      width: 100%;
+    }
+
+    legend {
+      padding: $tiny-value 0.765rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  .#{$skg-prefix}input-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: $tiny-value;
+
+    &.is-required {
+      label {
+        &:after {
+          content: '*';
+          margin: 0 $tiny-value;
+          color: $required-color;
+        }
+      }
+    }
+
+    @include respond-to("portrait-down") {
+      margin-bottom: $tiny-value;
+      flex-direction: column;
+      align-items: initial;
+    }
+  }
+
+  .#{$skg-prefix}form-actions {
+    display: flex;
+    flew-flow: row nowrap;
+
+    * {
+      &:first-of-type {
+        margin-right: auto;
+      }
+      &:last-of-type {
+        margin-left: auto;
+      }
+    }
+  }
+
+  [type="text"],
+  [type="email"],
+  [type="password"],
+  select,
+  textarea {
+    padding: $small-value $small-plus-value;
+    font-size: 0.8rem;
+  }
+
+  label {
+    min-width: 10rem;
+    max-width: 10rem;
+    word-break: break-word;
+    cursor: pointer;
+
+    @include respond-to("portrait-down") {
+      margin-bottom: $tiny-value;
+    }
+  }
+
+}

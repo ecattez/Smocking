@@ -1,4 +1,4 @@
-@mixin flash($color) {
+@mixin notification($color) {
   background: white;
   box-shadow: $base-shadow;
 	margin-bottom: $small-plus-value;
@@ -62,17 +62,17 @@
 }
 
 .#{$skg-prefix}message {
-  @include flash($primary-color);
+  @include notification($primary-color);
     
 	&.is-secondary {
-    @include flash($secondary-color);
+    @include notification($secondary-color);
   }
 	
   &.is-success {
-    @include flash($success-color);
+    @include notification($success-color);
   }
   
   &.is-error {
-    @include flash($error-color);
+    @include notification($error-color);
   }
 }

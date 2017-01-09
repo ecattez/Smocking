@@ -2,6 +2,13 @@
 
 $skg-prefix: skg- !default;
 
+// Warning : you should use your own values, regardless of the devices
+// Best practise : (max-width: $BP) and (min-width: ($BP + 1))
+$tiny        : 544px !default; // or 'em' if you prefer, of course
+$small       : 768px !default;
+$medium      : 1024px !default;
+$large       : 1170px !default;
+
 // spacings (choose unit you prefer)
 $tiny-value             : .5rem !default; // tiny value for margins / paddings
 $tiny-plus-value        : .7rem !default; // tiny+ value for margins / paddings
@@ -21,14 +28,18 @@ $primary-color: #313131;
 $secondary-color: #7a74f1;
 $success-color: #1897e7;
 $error-color: #ec4646;
+$required-color: #ec4646;
+
+$color-white: #fff;
+$color-light-grey: #f4f4f4;
 
 $base-border-width: 0px; 
 $base-border-color: #cecece;
 $base-border-radius: 0rem !default;
 
 $base-shadow: 0 0.1rem 2rem rgba(0,0,0,0.1);
-// Fonts
 
+// Fonts
 $base-font-size: 1.4rem !default;
 $h1-size: 3rem !default;
 $h2-size: 2.5rem !default;

@@ -9,13 +9,15 @@
 @import 'base/link';
 @import 'base/icons';
 @import 'base/typography';
-@import 'base/table';
 
 /** Component **/
-@import 'component/flash';
-@import 'component/loader';
+@import 'component/table';
 @import 'component/button';
+@import 'component/form';
+@import 'component/notification';
+@import 'component/loader';
 @import 'component/tips';
+@import 'component/snippet';
 
 /** Layout **/
 @import 'layout/grid';
