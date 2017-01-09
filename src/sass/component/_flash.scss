@@ -1,7 +1,7 @@
-@mixin flash($first-color) {
+@mixin flash($color) {
   background: white;
-  box-shadow: 0 0.1rem 2rem rgba(0,0,0,0.1);
-	margin-bottom: $tiny-value;
+  box-shadow: $base-shadow;
+	margin-bottom: $small-plus-value;
 	border-radius: $base-border-radius;
 	overflow: hidden;
   
@@ -31,28 +31,26 @@
     flex-grow: 1;
     flex-shrink: 1;
     font-size: 1rem;
+    padding: 0 $tiny-plus-value;
 		
 		p {
 			line-height: inherit;
 		}
   }
   
-  .skg-message-close {
-    font-size: 1rem;
-  }
-  
   .skg-message-close a {
     color: black;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     
     &:hover {
-      color: $first-color;
+      color: $color;
     }
   }
   
   .skg-message-icon {
-    background: $first-color;
+    background: $color;
     color: white;
     
     span {

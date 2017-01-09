@@ -1,0 +1,42 @@
+@mixin tips-color($color) {
+  position: relative;
+  color: white;
+  background: rgba($color, 0.6);
+  box-shadow: $base-shadow;
+  margin-bottom: $small-plus-value;
+  border-radius: $base-border-radius; 
+  
+  .skg-tips-close a {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      color: $color;
+    }
+  }
+}
+
+.#{$skg-prefix}tips {
+  padding: 1.5rem;
+	margin-bottom: $tiny-value;
+	border-radius: $base-border-radius;
+  
+  @include tips-color($primary-color);
+  
+  &.is-secondary {
+    @include tips-color($secondary-color);
+  }
+  
+  &.is-success {
+    @include tips-color($success-color);
+  }
+  
+  &.is-error {
+    @include tips-color($error-color);
+  }
+}

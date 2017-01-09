@@ -76,10 +76,12 @@ h1, h2, h3, h4, h5, h6 {
 
 // Paragraphs
 p {
-  padding: 0 $small-value;
-  margin: 0;
 	font-size: 1rem;
-	line-height: 1.2rem;
+	line-height: 1.3rem;
+  
+  + p {
+    margin-top: $tiny-value;
+  }
 }
 
 // Lists
