@@ -8,8 +8,9 @@
 }
 
 .#{$skg-prefix}items {
-    display: flex;
-    box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
     
     &.are-reversed {
         flex-direction: row-reverse;
@@ -61,17 +62,11 @@
         flex-shrink: 0;
     }
     
-    .#{$skg-prefix}items {
-        flex-grow: 1;
-        flex-shrink: 1;
-    }
-    
     .#{$skg-prefix}item {
-        box-sizing: border-box;
-        margin: 1.25rem;
-        flex-grow: 1;
-        flex-shrink: 1;
-        
+      box-sizing: border-box;
+      flex-grow: 1;
+      flex-shrink: 1;
+      
         &.is-static {
             flex-grow: 0;
             flex-shrink: 0;

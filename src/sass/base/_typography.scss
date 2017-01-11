@@ -147,7 +147,6 @@ mark {
 }
 abbr {
   cursor: help;
-  border-bottom: 0.1rem dotted $base-border-color;
 }
 address {
   margin-bottom: $large-value;
@@ -162,7 +161,6 @@ blockquote {
     &::before {
       @extend .ion;
       content: $ionicon-var-minus-round;
-      color: $base-border-color;
       font-weight: bold;
       margin-top: 1rem;
       margin-right: 1rem;

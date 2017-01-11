@@ -24,9 +24,8 @@
     padding: $small-value;
     margin: -#{$small-value};
     margin-bottom: $small-value;
-    text-transform: uppercase;
-    background-color: lighten($primary-color, 5%);
-    color: lighten($primary-color, 50%);
+    background-color: lighten($secondary-color, 10%);
+    color: white;
   }
 
   &[data-language] {

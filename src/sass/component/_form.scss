@@ -1,79 +1,75 @@
+@mixin input-states($color) {
+  color: $color;
+  box-shadow: inset 0 0 0 1px $color;
+  transition: box-shadow 0.3s ease;
+  
+  &:focus, &:active {
+    box-shadow: inset 0 0 0 2px $color;  
+  }
+  
+  &::-webkit-input-placeholder {
+    color: lighten($color, 15%);
+  }
+   
+  &::-moz-input-placeholder {
+    color: lighten($color, 15%);
+  }
+  
+  &:-ms-input-placeholder {
+    color: lighten($color, 15%);
+  }
+}
+
 .#{$skg-prefix}form {
-
-  position: relative;
-  display: flex;
-
-  .#{$skg-prefix}fieldset {
-    position: relative;
-    border: 1px solid $base-border-color;
-    padding: $tiny-plus-value;
-
-    @include respond-to("portrait-down") {
-      width: 100%;
-    }
-
-    legend {
-      padding: $tiny-value 0.765rem;
-      font-weight: 600;
-      text-align: center;
+  display: flex; 
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  
+  &.are-secondary {
+    .#{$skg-prefix}input {
+      @include input-states($secondary-color);
     }
   }
-
-  .#{$skg-prefix}input-group {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-bottom: $tiny-value;
-
-    &.is-required {
-      label {
-        &:after {
-          content: '*';
-          margin: 0 $tiny-value;
-          color: $required-color;
-        }
-      }
-    }
-
-    @include respond-to("portrait-down") {
-      margin-bottom: $tiny-value;
-      flex-direction: column;
-      align-items: initial;
+  
+  &.are-success {
+    .#{$skg-prefix}input {
+      @include input-states($success-color);
     }
   }
-
-  .#{$skg-prefix}form-actions {
-    display: flex;
-    flew-flow: row nowrap;
-
-    * {
-      &:first-of-type {
-        margin-right: auto;
-      }
-      &:last-of-type {
-        margin-left: auto;
-      }
+  
+  &.are-error {
+    .#{$skg-prefix}input {
+      @include input-states($error-color);
     }
   }
+}
 
-  [type="text"],
-  [type="email"],
-  [type="password"],
-  select,
-  textarea {
-    padding: $small-value $small-plus-value;
-    font-size: 0.8rem;
+.#{$skg-prefix}input {
+  @include input-states(lighten($primary-color, 50%));
+  
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100%;
+  height: 2.5rem;
+  margin: $tiny-plus-value;
+  padding: 0.5rem;
+  border-radius: $base-border-radius;
+  font-family: $source-font-family;
+  font-size: 0.9rem;
+  outline: none;
+  border: none;
+  
+  &.is-secondary {
+    @include input-states($secondary-color);
   }
-
-  label {
-    min-width: 10rem;
-    max-width: 10rem;
-    word-break: break-word;
-    cursor: pointer;
-
-    @include respond-to("portrait-down") {
-      margin-bottom: $tiny-value;
-    }
+  
+  &.is-success {
+    @include input-states($success-color);
   }
-
+  
+  &.is-error {
+    @include input-states($error-color);
+  }
 }

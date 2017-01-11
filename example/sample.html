@@ -589,34 +589,52 @@
 		</div>
 	</section>
 
-    <section class="ccontainer">
-        <div class="container">
-            <h1>Form</h1>
-            <form class="skg-form" action="#" method="post">
-                <fieldset class="skg-fieldset">
-                    <legend>Search person(s)</legend>
-                    <div class="skg-input-group is-required">
-                        <label for="firstname">First Name</label>
-                        <input name="firstname" id="firstname" placeholder="First name" type="text" />
-                    </div>
-                    <div class="skg-input-group is-required">
-                        <label for="lastname">Last Name</label>
-                        <input name="lastname" id="lastname" placeholder="Last name" type="text" />
-                    </div>
-                    <div class="skg-input-group">
-                        <label for="gender">Gender</label>
-                        <select name="gender" id="gender">
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="skg-form-actions">
-                        <button class="skg-button is-cancel" type="reset">Reset</button>
-                        <button class="skg-button is-confirm" type="button">Search</button>
-                    </div>
-                </fieldset>
-            </form>
+    <section class="skg-section">
+        <div class="skg-wrapper">
+          <h1>Form</h1>
+          <div class="skg-items">
+            <div class="skg-item">
+              <form class="skg-form" action="#" method="post">
+                <input placeholder="First name" class="skg-input">
+                <input placeholder="Last name" class="skg-input">
+
+                <button type="button" class="skg-button is-scondary to-right">
+                  <i class="ion-paper-airplane"></i>
+                  <span>Submit</span>
+                </button>
+              </form>
+            </div>
+            
+            <div class="skg-item">
+              <form class="skg-form are-secondary" action="#" method="post">
+                <input placeholder="First name" class="skg-input">
+                <input placeholder="Last name" class="skg-input">
+                <button type="button" class="skg-button is-confirm to-right">
+                  <i class="ion-paper-airplane"></i>
+                  <span>Submit</span>
+                </button>
+              </form>
+            </div>
+          
+            <div class="skg-item">
+              <form class="skg-form" action="#" method="post">
+                <input placeholder="First name" class="skg-input is-success">
+                <input placeholder="Last name" class="skg-input is-error">
+                
+                <div class="skg-buttons are-grouped are-rounded all-to-right">
+                  <button type="button" class="skg-button is-cancel" disabled>
+                    <i class="ion-paper-airplane"></i>
+                    <span>Submit</span>
+                  </button>
+                  
+                  <button type="button" class="skg-button is-secondary" disabled>
+                    <i class="ion-paper-airplane"></i>
+                    <span>Submit</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
     </section>
 

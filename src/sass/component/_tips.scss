@@ -1,7 +1,7 @@
 @mixin tips-color($color) {
   position: relative;
   color: white;
-  background: rgba($color, 0.6);
+  background: lighten($color, 10%);
   box-shadow: $base-shadow;
   margin-bottom: $small-plus-value;
   border-radius: $base-border-radius; 

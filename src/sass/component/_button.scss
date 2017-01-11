@@ -17,16 +17,16 @@
 .#{$skg-prefix}button {
   @include button-states($primary-color, white);
   
-  margin-top: $tiny-value;
-  margin-bottom: $tiny-value;
+  margin: $tiny-value $tiny-plus-value;
   font-family: $source-font-family;
   border-radius: $base-border-radius;
   
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   height: 3rem;
   padding: 0 2rem;
-  border: none;
+  border: $base-border;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -56,6 +56,14 @@
     @include button-states($error-color, white);
   }
   
+  &.to-right {
+    margin-left: auto;
+  }
+
+  &.to-left {
+    margin-right: auto;
+  }
+  
   i {
     font-size: 1.2rem;
       
@@ -68,8 +76,7 @@
     cursor: default;
     opacity: 0.2;
     transform: scale3d(0.9, 0.9, 1);
-  }
-  
+  } 
 }
 
 .#{$skg-prefix}buttons {
@@ -100,9 +107,15 @@
       }
     }
     
+    &.all-to-right {
+      margin-left: auto;
+    }
+
+    &.all-to-left {
+      margin-right: auto;
+    }
+    
     .#{$skg-prefix}button {
-      position: relative;
-      margin-right: -$base-border-width;
       
       &.is-rounded {
         border-radius: 15rem;
@@ -128,19 +141,22 @@
         transform: scale3d(1, 1, 1);
       }
       
-      &:first-of-type {
+      &:first-child {
+        margin-right: 0;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0; 
       }
       
-      &:last-of-type {
+      &:last-child {
+        margin-left: 0;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0; 
-        margin-right: 0;
       }
       
       &:not(:first-child, :last-child) {
-        border-radius: 0; 
+        margin-right: 0;
+        margin-left: 0;
+        border-radius: 0;
       }
       
       &:hover {
