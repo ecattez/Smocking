@@ -1,13 +1,37 @@
 # Smocking
 
-Un framework CSS qui ne manque pas de style.
+---
+> Smocking is an embroidery technique used to gather fabric so that it can stretch. - Wikipedia
+---
 
-## Sass Task
+## Summary
 
-### Install
+| Component    | Status |
+| ------------ | ------ |
+| Flexbox grid | TODO   |
+| Typography   | TODO   |
+| Snippet      | DOING  |
+| Button       | DONE   |
+| Notifications| DONE   |
+| Tips         | DONE   |
+| Loader       | DONE   |
+| Table        | DOING  |
+| Form         | DOING  |
+| Menu         | TODO   |
+| Sidebar      | TODO   |
+| Images       | TODO   |
+| Breadcrumb   | DOING  |
+| Pagination   | DOING  |
+| Modal        | TODO   |
 
-`npm i`
+Learn Smocking with our website [here](https://github.com/ecattez/Smocking/tree/develop) !
 
-### Run
+**Installation**
+```
+npm i
+```
 
-`gulp default`
+**Run**
+```
+gulp
+```

@@ -5,6 +5,7 @@ html {
 body {
     font-family: $source-font-family;
     font-size: $base-font-size;
+    border-top: 0.2rem solid $secondary-color;
 }
 
 .all-to-bottom {
@@ -19,4 +20,9 @@ body {
 .to-bottom, 
 .to-center {
     height: 6.1rem;
+}
+
+.#{$skg-prefix}example {
+    background: $color-light-grey;
+    padding: $small-value;
 }

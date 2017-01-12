@@ -1,0 +1,97 @@
+.#{$skg-prefix}pagination {
+
+  ul {
+    @extend .#{$skg-prefix}no-list-style;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    li {
+      margin: $tiny-value 0;
+      font-family: $source-font-family;
+      border-radius: $base-border-radius;
+      text-align: center;
+
+      border: none;
+      padding: $small-value;
+      font-size: $small-value;
+      letter-spacing: 0.1rem;
+      outline: none;
+      cursor: pointer;
+      transform-origin: center center;
+      transform: scale3d(1, 1, 1);
+      transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+
+      background-color: $primary-color;
+      &[disabled],
+      &[disabled] a {
+        color: darken(white, 50%);
+        cursor: default;
+      }
+      &:hover:not([disabled]) {
+        background-color: darken($primary-color, 2%);
+      }
+      &.is-selected {
+        background-color: lighten($primary-color, 5%);
+      }
+
+      &.is-previous,
+      &.is-next {
+        &:before,
+        &:after {
+          @extend .ion;
+          font-size: $small-value;
+        }
+      }
+
+      @include respond-to("portrait-down") {
+        &.is-previous,
+        &.is-next {
+          font-size: 0;
+        }
+        &.is-previous {
+          text-align: left;
+          &:before {
+            content: $ionicon-var-arrow-left-b;
+          }
+        }
+        &.is-next {
+          text-align: right;
+          &:after {
+            content: $ionicon-var-arrow-right-b;
+          }
+        }
+      }
+    }
+
+    li,
+    a {
+      color: white;
+    }
+  }
+
+  &.is-dotted {
+    li {
+      border-radius: 50%;
+      font-size: 0;
+      height: $small-value;
+      width: $small-value;
+      padding: 0;
+      margin-right: $tiny-value;
+      background-color: darken(white, 20%);
+
+      &.is-selected {
+        background-color: $secondary-color;
+      }
+
+      &:hover:not([disabled]) {
+        background-color: darken(white, 45%);
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

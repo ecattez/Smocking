@@ -1,0 +1,61 @@
+.#{$skg-prefix}breadcrumb {
+
+  ul {
+    @extend .#{$skg-prefix}no-list-style;
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    li {
+      margin: $tiny-value 0;
+      font-family: $source-font-family;
+      border-radius: $base-border-radius;
+      text-align: center;
+
+      border: none;
+      font-size: $small-value;
+      letter-spacing: 0.1rem;
+      outline: none;
+      cursor: pointer;
+
+      &[disabled],
+      &[disabled] a {
+        color: lighten($primary-color, 50%);
+        cursor: default;
+      }
+
+      &.is-selected {
+        a {
+          border-bottom: 1px dotted;
+        }
+      }
+
+      &:not([disabled]) {
+        a {
+          &:hover {
+            border-bottom: 1px dotted;
+          }
+        }
+      }
+
+      &:after {
+        content: '/';
+        margin: 0 $tiny-value;
+        color: $primary-color;
+        font-weight: 800;
+      }
+
+      &:last-of-type {
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+    li,
+    a {
+      color: $secondary-color;
+    }
+  }
+}

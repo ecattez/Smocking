@@ -71,13 +71,16 @@ h6 {
   font-size: $h6-size;
 }
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
   margin-bottom: $small-value;
+  font-weight: normal;
 }
 
 // Paragraphs
 p {
   font-size: 1rem;
   line-height: 1.3rem;
+  margin: 0;
   
   + p {
     margin-top: $tiny-value;
@@ -87,6 +90,7 @@ p {
 // Lists
 ul, ol {
   &.#{$skg-prefix}no-list-style {
+    margin: 0;
     padding-left: 0;
     list-style: none;
   }

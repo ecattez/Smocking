@@ -5,7 +5,7 @@
 @import 'abstract/placeholders';
 
 /** Base **/
-@import 'base/reset';
+@import 'base/normalize';
 @import 'base/link';
 @import 'base/icons';
 @import 'base/typography';
@@ -18,6 +18,8 @@
 @import 'component/loader';
 @import 'component/tips';
 @import 'component/snippet';
+@import 'component/pagination';
+@import 'component/breadcrumb';
 
 /** Layout **/
 @import 'layout/grid';

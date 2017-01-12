@@ -17,6 +17,7 @@
   padding: $small-value;
   margin-bottom: $tiny-value;
   color: $color-white;
+  font-size: $base-font-size;
 
   &:before {
     content: 'Plain Text';
