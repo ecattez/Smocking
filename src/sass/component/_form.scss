@@ -20,11 +20,18 @@
   }
 }
 
-.#{$skg-prefix}form {
+.#{$skg-prefix}inputs {
   display: flex; 
   flex-wrap: wrap;
   flex-grow: 1;
   flex-shrink: 1;
+  
+  &.are-rounded {
+    .#{$skg-prefix}input {
+      padding-left: 1rem;
+      border-radius: 15rem;
+    }
+  }
   
   &.are-secondary {
     .#{$skg-prefix}input {
@@ -60,6 +67,11 @@
   font-size: 0.9rem;
   outline: none;
   border: none;
+  
+  &.is-rounded {
+    padding-left: 1rem;
+    border-radius: 15rem;
+  }
   
   &.is-secondary {
     @include input-states($secondary-color);

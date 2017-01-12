@@ -29,7 +29,6 @@
   border: $base-border;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
-  text-transform: uppercase;
   outline: none;
   cursor: pointer;
   transform-origin: center center;
@@ -80,6 +79,22 @@
 }
 
 .#{$skg-prefix}buttons {
+  display: flex;
+  flex: 1;
+  flex-shrink: 1;
+  
+  &.all-to-right {
+    .#{$skg-prefix}button:first-child {
+      margin-left: auto;
+    }
+  }
+
+  &.all-to-left {
+    .#{$skg-prefix}button:last-child {
+      margin-right: auto;
+    }
+  }
+  
   &.are-rounded {
     .#{$skg-prefix}button {
       border-radius: 15rem;
@@ -88,7 +103,7 @@
 
   &.are-grouped {
     display: flex;
-
+    
     &.are-secondary {
       .#{$skg-prefix}button {
         @include button-states($secondary-color, white);
@@ -105,15 +120,7 @@
       .#{$skg-prefix}button {
           @include button-states($error-color, white);
       }
-    }
-    
-    &.all-to-right {
-      margin-left: auto;
-    }
-
-    &.all-to-left {
-      margin-right: auto;
-    }
+    }  
     
     .#{$skg-prefix}button {
       
@@ -157,10 +164,6 @@
         margin-right: 0;
         margin-left: 0;
         border-radius: 0;
-      }
-      
-      &:hover {
-        z-index: 1;      
       }
     }
   }
