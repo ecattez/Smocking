@@ -20,12 +20,59 @@
   }
 }
 
-.#{$skg-prefix}inputs {
-  display: flex; 
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
+@mixin checkbox-states($color) {
+  label {
+    color: lighten($color, 15%);
+    
+    &:before {
+      border: 1px solid $color;
+    }
+    
+    &:after {
+      background: $color;
+    }
+  }
   
+  input:checked + label {
+    color: $color;
+  }
+}
+
+@mixin radio-states ($color) {
+  label {
+    color: lighten($color, 15%);
+    
+    &:before {
+      border: 1px solid $color;
+    }
+    
+    &:after {
+      background: $color;
+    }
+  }
+  
+  input:checked + label {
+    color: $color;
+  }
+}
+
+.#{$skg-prefix}form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.#{$skg-prefix}checkboxes,  
+.#{$skg-prefix}radios,
+.#{$skg-prefix}inputs {
+  display: flex;
+  flex: 1 1 100%;
+  
+  &.are-vertical {
+    flex-direction: column;
+  }
+}
+
+.#{$skg-prefix}inputs {  
   &.are-rounded {
     .#{$skg-prefix}input {
       padding-left: 1rem;
@@ -50,26 +97,37 @@
       @include input-states($error-color);
     }
   }
+  
+  .#{$skg-prefix}input {
+    &.is-secondary {
+      @include input-states($secondary-color);
+    }
+
+    &.is-success {
+      @include input-states($success-color);
+    }
+
+    &.is-error {
+      @include input-states($error-color);
+    }
+  }
 }
 
 .#{$skg-prefix}input {
-  @include input-states(lighten($primary-color, 50%));
+  @include input-states(lighten($primary-color, 40%));
   
   box-sizing: border-box;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 100%;
+  flex: 1 1 100%;
   height: 2.5rem;
   margin: $tiny-plus-value;
-  padding: 0.5rem;
+  padding: $small-value;
   border-radius: $base-border-radius;
   font-family: $source-font-family;
   font-size: 0.9rem;
   outline: none;
   border: none;
-  
+
   &.is-rounded {
-    padding-left: $small-value;
     border-radius: 15rem;
   }
   
@@ -83,5 +141,183 @@
   
   &.is-error {
     @include input-states($error-color);
+  }
+}
+
+.#{$skg-prefix}checkboxes {
+    &.are-secondary {
+    .#{$skg-prefix}checkbox {
+      @include checkbox-states($secondary-color);
+    }
+  }
+  
+  &.are-success {
+    .#{$skg-prefix}checkbox {
+      @include checkbox-states($success-color);
+    }
+  }
+  
+  &.are-error {
+    .#{$skg-prefix}checkbox {
+      @include checkbox-states($error-color);
+    }
+  }
+  
+  .#{$skg-prefix}checkbox {
+    &.is-secondary {
+      @include checkbox-states ($secondary-color);
+    }
+
+    &.is-success {
+      @include checkbox-states ($success-color);
+    }
+
+    &.is-error {
+      @include checkbox-states ($error-color);
+    }
+  }
+}
+
+.#{$skg-prefix}checkbox {  
+  @include checkbox-states (lighten($primary-color, 40%));
+  
+  box-sizing: border-box;
+  position: relative;
+  flex: 1 1 auto;
+  margin: 0.5rem $tiny-plus-value;
+  
+  [type='checkbox'] {
+    display: none;
+  }
+  
+  label {  
+    padding-left: 1rem + $small-value;
+    font-size: 1rem;
+    transition: color .3s ease;
+    
+    &:after {
+      border: 1px solid transparent;
+      transform-origin: center center;
+      opacity: 0;
+      transform: scale(0.2);
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    
+    &:before, &:after {
+      position: absolute;
+      top: 0.36rem;
+      left: 0;
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      border-radius: $base-border-radius;
+      overflow: hidden;
+    }
+  }
+  
+  input:checked + label:after {
+    opacity: 1;
+    transform: scale(0.8);
+  }
+  
+  &.is-secondary {
+    @include checkbox-states ($secondary-color);
+  }
+  
+  &.is-success {
+    @include checkbox-states ($success-color);
+  }
+  
+  &.is-error {
+    @include checkbox-states ($error-color);
+  }
+}
+
+.#{$skg-prefix}radios {
+    &.are-secondary {
+    .#{$skg-prefix}radio {
+      @include radio-states($secondary-color);
+    }
+  }
+  
+  &.are-success {
+    .#{$skg-prefix}radio {
+      @include radio-states($success-color);
+    }
+  }
+  
+  &.are-error {
+    .#{$skg-prefix}radio {
+      @include radio-states($error-color);
+    }
+  }
+  
+  .#{$skg-prefix}radio {
+    &.is-secondary {
+      @include radio-states ($secondary-color);
+    }
+
+    &.is-success {
+      @include radio-states ($success-color);
+    }
+
+    &.is-error {
+      @include radio-states ($error-color);
+    }
+  }
+}
+
+.#{$skg-prefix}radio {  
+  @include radio-states (lighten($primary-color, 40%));
+  
+  box-sizing: border-box;
+  position: relative;
+  flex: 1 1 auto;
+  margin: 0.5rem $tiny-plus-value;
+  
+  [type='radio'] {
+    display: none;
+  }
+  
+  label {  
+    padding-left: 1rem + $small-value;
+    font-size: 1rem;
+    transition: color .3s ease;
+    
+    &:after {
+      border: 1px solid transparent;
+      transform-origin: center center;
+      opacity: 0;
+      transform: scale(0.2);
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    
+    &:before, &:after {
+      position: absolute;
+      top: 0.36rem;
+      left: 0;
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+  
+  input:checked + label:after {
+    opacity: 1;
+    transform: scale(0.8);
+  }
+  
+  &.is-secondary {
+    @include radio-states ($secondary-color);
+  }
+  
+  &.is-success {
+    @include radio-states ($success-color);
+  }
+  
+  &.is-error {
+    @include radio-states ($error-color);
   }
 }

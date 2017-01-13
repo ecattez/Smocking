@@ -80,8 +80,7 @@
 
 .#{$skg-prefix}buttons {
   display: flex;
-  flex: 1;
-  flex-shrink: 1;
+  flex: 1 1 100%;
   
   &.all-to-right {
     .#{$skg-prefix}button:first-child {
@@ -123,11 +122,6 @@
     }  
     
     .#{$skg-prefix}button {
-      
-      &.is-rounded {
-        border-radius: 15rem;
-      }
-
       &.is-primary {
         @include button-states($primary-color, white);
       }
