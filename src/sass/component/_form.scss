@@ -59,6 +59,31 @@
 .#{$skg-prefix}form {
   display: flex;
   flex-wrap: wrap;
+  
+  &.is-search {
+    flex-wrap: nowrap;
+
+    .#{$skg-prefix}input {
+      margin-right: 0;
+    }
+
+    .#{$skg-prefix}button {
+      height: 2.5rem;
+      margin: $tiny-plus-value;
+      margin-left: -0.1rem;
+      padding: 0 $small-value;
+    }
+
+    &.is-rounded {
+      .#{$skg-prefix}input {
+        border-radius: 15rem 0 0 15rem;
+      }
+
+      .#{$skg-prefix}button {
+        border-radius: 0 15rem 15rem 0;
+      }
+    }
+  }
 }
 
 .#{$skg-prefix}checkboxes,  

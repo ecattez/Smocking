@@ -45,25 +45,6 @@
           line-height: inherit;
         }
       }
-
-      @include respond-to("portrait-down") {
-        &.is-previous,
-        &.is-next {
-          font-size: 0;
-        }
-        &.is-previous {
-          text-align: left;
-          &:before {
-            content: $ionicon-var-arrow-left-b;
-          }
-        }
-        &.is-next {
-          text-align: right;
-          &:after {
-            content: $ionicon-var-arrow-right-b;
-          }
-        }
-      }
     }
 
     li,
