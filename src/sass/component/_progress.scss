@@ -1,0 +1,38 @@
+.#{$skg-prefix}progress {
+  height: $medium-value;
+  line-height: $medium-value;
+  width: 50%;
+  margin-bottom: $tiny-value;
+  position: relative;
+  font-size: $small-value;
+  border: 1px solid $primary-color;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &::-webkit-progress-bar {
+    background-color: white;
+  }
+
+  &::-webkit-progress-value {
+    background-color: $success-color;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    margin: 0 0.2rem;
+  }
+
+  &:before {
+    content: attr(data-progress-title);
+    left: 0;
+  }
+
+  &.is-cancel {
+    &::-webkit-progress-value {
+      background-color: $error-color;
+    }
+  }
+}

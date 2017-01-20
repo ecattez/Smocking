@@ -9,6 +9,7 @@ const sass         = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const concat       = require('gulp-concat');
 const minify       = require('gulp-minify');
+const babel        = require('gulp-babel');
 
 // Config object
 const CONFIG = {};
@@ -36,6 +37,9 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
     return gulp.src(CONFIG.SRC.SCRIPT)
         .pipe(concat('smocking.js'))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(minify({
             noSource: true,
             ext:{
@@ -47,5 +51,5 @@ gulp.task('scripts', function() {
 
 gulp.task('default', ['sass', 'scripts'], function() {
     gulp.watch(CONFIG.SRC.SASS, ['sass']);
-    gulp.watch(CONFIG.SRC.SCRIPT, ['sscripts'])
+    gulp.watch(CONFIG.SRC.SCRIPT, ['scripts'])
 });

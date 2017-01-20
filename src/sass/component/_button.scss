@@ -54,6 +54,67 @@
   &.is-cancel {
     @include button-states($error-color, white);
   }
+
+  &.is-menu {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    height: 5rem;
+    width: 5rem;
+    font-size: 0;
+    text-indent: -9999px;
+
+    span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: $small-value;
+      right: $small-value;
+      height: 0.2rem;
+      background-color: white;
+      transition: background 0.3s;
+      transition-delay: 0s, 0.3s;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 0.2rem;
+        background-color: white;
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0s, 0.3s;
+      }
+
+      &:before {
+        top: -#{$small-value};
+        transition-property: top, transform;
+      }
+
+      &:after {
+        bottom: -#{$small-value};
+        transition-property: bottom, transform;
+      }
+    }
+
+    &.is-open {
+      span {
+        background-color: transparent;
+
+        &:before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
   
   &.to-right {
     margin-left: auto;

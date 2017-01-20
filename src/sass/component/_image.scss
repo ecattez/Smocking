@@ -1,0 +1,39 @@
+.#{$skg-prefix}image {
+  position: relative;
+  border: 1px solid darken(white, 20%);
+  margin: $tiny-value;
+  height: 100%;
+  width: 100%;
+
+  &.is-rounded {
+    border-radius: 50%;
+  }
+
+  &.is-thumbnail {
+    padding: $tiny-value;
+    background-color: white;
+    height: calc(100% - #{$tiny-value});
+    width: calc(100% - #{$tiny-value});
+  }
+}
+
+.#{$skg-prefix}picture {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+
+  figcaption {
+    position: absolute;
+    padding: $small-value;
+    margin: $tiny-value 0;
+    left: 0;
+    right: 0;
+    bottom: $small-value;
+    background-color: rgba(49,49,49,0.7);
+    color: white;
+    font-size: $small-value;
+  }
+}
